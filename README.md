@@ -30,6 +30,10 @@ python3 check_product_schema.py examples/product_incomplete.html
 
 The example intentionally contains an incomplete Product/Offer to demonstrate what a finding looks like. It does **not** crawl websites, scrape private accounts, generate fake reviews, access live stock, or make any network requests.
 
+## Explore the complete public Actor catalog
+
+[Browse every currently published Practical AI Lab Actor by keyword](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/catalog.html). This free page links directly to each Actor's live Apify listing and current pricing.
+
 ## 3. Scale to an ecommerce catalog with PAL on Apify
 
 If you are responsible for dozens of public product URLs, prefer a cloud Actor with a documented input schema, CSV/JSON exports, and a repeatable workflow.
