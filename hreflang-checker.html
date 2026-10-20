@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Hreflang Checker for HTML Pages | Practical AI Lab</title>
+<meta name="description" content="Free in-browser hreflang checker: paste HTML and detect missing hreflang URLs, repeated language tags, invalid URL schemes, and basic format issues. No upload or login.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/hreflang-checker.html">
+<meta property="og:title" content="Free Hreflang HTML Tag Checker | Practical AI Lab">
+<meta property="og:description" content="Review hreflang link annotations in pasted HTML, with no upload or signup. Use PAL on Apify for batch inspection of public URLs.">
+<meta property="og:type" content="website">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#0a1020;color:#eaf4ff}
+*{box-sizing:border-box}
+body{margin:0;line-height:1.58}
+a{color:#95ddfc}a:hover{text-decoration:underline}
+main,footer,header>div{max-width:930px;margin:0 auto;padding:0 22px}
+header{padding:18px 0;border-bottom:1px solid #2b4662;background:#0e1c2b}
+header>div{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.04em}
+.hero{padding:57px 0 35px}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.11;letter-spacing:-.03em;margin:0 0 17px}
+h2{font-size:1.45rem}
+.lead{font-size:1.06rem;color:#bfcee2;max-width:760px}
+.panel{background:#132235;border:1px solid #30506b;border-radius:14px;padding:22px;margin:26px 0}
+label{display:block;font-weight:700;margin:0 0 8px}
+textarea{display:block;width:100%;min-height:225px;font-family:ui-monospace,Consolas,monospace;font-size:.92rem;line-height:1.5;padding:16px;border-radius:11px;border:1px solid #6484a3;background:#081624;color:#e8f4fc}
+button{border:1px solid #80c7dd;background:#77c7db;color:#081522;font-weight:800;font:inherit;cursor:pointer;border-radius:9px;padding:10px 16px;margin:11px 8px 0 0}
+button.secondary{background:transparent;color:#a0e1f1}
+button:focus-visible,a:focus-visible,textarea:focus-visible{outline:2px solid #77d8f0;outline-offset:3px}
+.stats{display:flex;gap:24px;flex-wrap:wrap}
+.stat strong{display:block;font-size:1.9rem}
+.stat{color:#c2d5e9}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{border-bottom:1px solid #36516b;padding:11px;text-align:left;overflow-wrap:anywhere}
+th{color:#99dce5}
+.tablewrap{overflow-x:auto}
+.issue{border-left:3px solid #d1b66d;padding:9px 13px;background:#212b35;margin:12px 0;color:#efdfb8}
+.note{color:#bdccdf;font-size:.94rem}
+.cta{display:inline-block;padding:13px 17px;background:#88d3e0;color:#061724;border-radius:9px;text-decoration:none;font-weight:800}
+footer{padding:26px 22px 40px;border-top:1px solid #2d4a66;color:#bdccdf}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Free Hreflang HTML Tag Checker","applicationCategory":"DeveloperApplication","operatingSystem":"Any browser","url":"https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/hreflang-checker.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Practical AI Lab"}}
+</script>
+</head>
+<body>
+<header><div><div class="brand">PRACTICAL AI LAB</div><nav><a href="./">Home</a> · <a href="catalog.html">All tools</a></nav></div></header>
+<main>
+<section class="hero">
+<h1>Check hreflang tags in HTML. Free, no upload.</h1>
+<p class="lead">Paste the HTML source of one public page to inspect declared language and region alternates. Find duplicate codes, missing destinations, non-HTTP(S) URLs and basic tag-format concerns before a multilingual website launch.</p>
+</section>
+<section class="panel">
+<label for="htmlInput">Paste a page's HTML source</label>
+<textarea id="htmlInput" spellcheck="false" aria-label="HTML source"></textarea>
+<button id="check" type="button">Check hreflang markup</button>
+<button id="example" class="secondary" type="button">Load example</button>
+<button id="clear" class="secondary" type="button">Clear</button>
+<p class="note">All processing stays in this browser. The page does not send your pasted HTML to PAL or Apify. For privacy, avoid pasting private customer data or credentials.</p>
+</section>
+<section id="output" aria-live="polite" hidden>
+<h2>Inspection results</h2>
+<div class="stats">
+<div class="stat"><strong id="found">0</strong>Annotations found</div>
+<div class="stat"><strong id="issues">0</strong>Review findings</div>
+</div>
+<div id="warnings"></div>
+<div class="tablewrap"><table>
+<thead><tr><th>hreflang</th><th>Destination</th><th>Review</th></tr></thead>
+<tbody id="rows"></tbody>
+</table></div>
+</section>
+<section>
+<h2>What this quick checker can and cannot verify</h2>
+<p>This free local tool reads <code>&lt;link rel="alternate" hreflang="…" href="…"&gt;</code> tags from pasted HTML. It performs **basic syntactic checks only**. It does not fetch your website, test HTTP status, verify actual country/language content, assess canonicals, crawl sitemaps, or confirm reciprocal hreflang links across pages. It does not guarantee search-engine behavior.</p>
+<p>For a repeatable audit of up to 18 <strong>public HTTPS URLs</strong>, use the hosted PAL Hreflang Tag Checker on Apify. It inspects static HTML pages and exports findings in CSV/JSON. **Review the current Pricing tab before running; successful page checks may be billable.**</p>
+<p><a class="cta" href="https://apify.com/practical_ai_lab_jp/my-actor-15">Audit multiple URLs with PAL on Apify ↗</a></p>
+<p class="note">Learn more in the <a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist/blob/main/guides/hreflang-international-seo-qa.md">free international SEO hreflang guide</a>. These are independent educational tools, not an official Google, Shopify or Apify service.</p>
+</section>
+</main>
+<footer>© 2026 Practical AI Lab · <a href="catalog.html">Explore all PAL tools</a> · No SEO ranking guarantee</footer>
+<script>
+(function(){
+"use strict";
+const byId=id=>document.getElementById(id);
+const sample='<!doctype html>\n<html lang="en"><head>\n<link rel="alternate" hreflang="en-US" href="https://www.example.com/us/product">\n<link rel="alternate" hreflang="en-GB" href="https://www.example.com/uk/product">\n<link rel="alternate" hreflang="ja-JP" href="https://www.example.com/jp/product">\n<link rel="alternate" hreflang="x-default" href="https://www.example.com/global/product">\n</head><body><h1>Example only</h1></body></html>';
+function addMessage(message){
+ const p=document.createElement("p");p.className="issue";p.textContent=message;byId("warnings").appendChild(p);
+}
+function check(){
+ const source=byId("htmlInput").value;
+ const doc=new DOMParser().parseFromString(source,"text/html");
+ const links=[...doc.querySelectorAll("link[rel]")].filter(node=>node.rel.toLowerCase().split(/\s+/).includes("alternate") && node.hasAttribute("hreflang"));
+ const seen=new Set();let findings=0;
+ byId("rows").replaceChildren();byId("warnings").replaceChildren();
+ for(const node of links){
+  const lang=(node.getAttribute("hreflang")||"").trim(),href=(node.getAttribute("href")||"").trim();
+  const warnings=[];
+  const key=lang.toLowerCase();
+  if(!lang)warnings.push("Missing language code");
+  else if(seen.has(key))warnings.push("Repeated hreflang code on this page");
+  else seen.add(key);
+  if(lang && key!=="x-default" && !/^[a-z]{2,3}(?:-[a-z]{2})?$/i.test(lang))warnings.push("Review language/region format");
+  if(!href)warnings.push("Missing destination URL");
+  else {
+   try{const target=new URL(href,"https://example.invalid/");
+    if(!["http:","https:"].includes(target.protocol))warnings.push("Unsupported destination URL scheme");
+    if(!/^https?:\/\//i.test(href))warnings.push("Relative URL: verify it resolves correctly");
+   }catch(e){warnings.push("Invalid destination URL");}
+  }
+  const row=document.createElement("tr");
+  for(const value of [lang||"(empty)",href||"(empty)",warnings.join("; ")||"Basic checks passed"]){
+   const cell=document.createElement("td");cell.textContent=value;row.appendChild(cell);
+  }
+  byId("rows").appendChild(row);
+  findings+=warnings.length;
+ }
+ if(!links.length){addMessage("No hreflang alternate links were found in the pasted HTML.");findings++;}
+ if(links.length>0&&!seen.has("x-default")){addMessage("No x-default alternate found. It can be useful but is not mandatory for every website.");}
+ byId("found").textContent=String(links.length);
+ byId("issues").textContent=String(findings);
+ byId("output").hidden=false;
+}
+byId("check").addEventListener("click",check);
+byId("example").addEventListener("click",()=>{byId("htmlInput").value=sample;check();});
+byId("clear").addEventListener("click",()=>{byId("htmlInput").value="";byId("output").hidden=true;byId("warnings").replaceChildren();byId("rows").replaceChildren();});
+byId("htmlInput").value=sample;
+check();
+})();
+</script>
+</body>
+</html>
