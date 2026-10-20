@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Apify Pay-Per-Event Cost Calculator | Practical AI Lab</title>
+<meta name="description" content="Estimate Apify Actor pay-per-event charges from successfully processed records, runs, and prices. Free, private and browser-only. No API calls or sign-in.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/pricing-estimator.html">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#0a1020;color:#e8f2ff}
+*{box-sizing:border-box}body{margin:0;line-height:1.6}a{color:#91dcff}
+.container{max-width:910px;margin:0 auto;padding:0 22px}
+header{background:#101c2c;border-bottom:1px solid #36506b;padding:18px 0}
+.nav{display:flex;gap:20px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.05em;color:#d7f4ff}
+.hero{padding:68px 0 37px;background:radial-gradient(ellipse at top left,#183858,transparent 70%)}
+h1{font-size:clamp(2rem,5vw,3.25rem);letter-spacing:-.025em;line-height:1.13;margin:0 0 14px}
+.lead{max-width:740px;color:#becfe1;font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:28px 0}
+.field{display:block}.field span{display:block;margin:0 0 6px;color:#cfdded;font-weight:650}
+input{font:inherit;padding:12px 14px;background:#14253a;color:#eff8ff;border:1px solid #65829b;border-radius:9px;width:100%}
+input:focus{outline:2px solid #78cbeb;outline-offset:1px}
+.result{border:1px solid #5f91a5;background:#15293d;border-radius:17px;padding:26px;margin:28px 0 22px}
+.amount{font-size:clamp(2rem,6vw,3rem);font-weight:850;letter-spacing:-.025em}
+.note{font-size:.93rem;color:#b9cddd}
+a.cta{display:inline-block;text-decoration:none;background:#82ccda;color:#091623;font-weight:800;padding:12px 18px;border-radius:11px;margin:6px 12px 8px 0}
+section{margin-bottom:42px}.resources{border-top:1px solid #304660;padding-top:25px}
+footer{padding:24px 0;border-top:1px solid #344b62;color:#bdcddd}
+@media(max-width:660px){.grid{grid-template-columns:1fr}.hero{padding:48px 0 24px}}
+</style>
+</head>
+<body>
+<header><div class="container nav"><div class="brand">PRACTICAL AI LAB</div><nav><a href="./">Free guide</a> · <a href="catalog.html">Browse all tools</a></nav></div></header>
+<main><div class="hero"><div class="container">
+<h1>Estimate pay-per-event costs before you run an Actor.</h1>
+<p class="lead">This simple browser-only calculator helps estimate a basic event-fee total for pay-per-event Apify Actors. Enter values from each Actor's <strong>live Pricing tab</strong>. No data is stored, uploaded, or sent anywhere.</p>
+</div></div>
+<section class="container">
+<form id="calculator" novalidate>
+<div class="grid">
+<label class="field"><span>Successfully processed events per run</span><input id="events" type="number" min="0" max="1000000" step="1" value="5" required></label>
+<label class="field"><span>Runs per month</span><input id="runs" type="number" min="0" max="1000000" step="1" value="4" required></label>
+<label class="field"><span>Price per event (USD)</span><input id="eventPrice" type="number" min="0" max="1000" step="0.000001" value="0.005" required></label>
+<label class="field"><span>Run-start charge (USD)</span><input id="startPrice" type="number" min="0" max="1000" step="0.000001" value="0.00005" required></label>
+</div>
+<p class="note">The numbers above are illustrative examples, <strong>not live PAL or Apify prices</strong>. The counts should represent <em>chargeable events</em>, which may differ from submitted URLs or dataset rows.</p>
+<div class="result" aria-live="polite">
+<div>Illustrative estimated event charges per month</div>
+<div class="amount" id="total">$0.1002</div>
+<div class="note" id="breakdown">20 processed events × $0.005 + 4 run starts × $0.00005.</div>
+</div>
+</form>
+<p class="note">This is a rough event-fee subtotal only. It does not guarantee actual invoices, Actor profitability, refund eligibility, free-plan treatment, tax, exchange rates, minimum billing, failed runs, storage/proxy charges, or any separately billed platform usage. Always check the live Pricing tab and actual usage for your chosen Actor.</p>
+<a class="cta" href="catalog.html">Find a PAL tool & current pricing ↗</a>
+<a href="https://apify.com/practical_ai_lab_jp">Open PAL on Apify ↗</a>
+</section>
+<section class="container resources">
+<h2>Practical workflows</h2>
+<p><a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist/blob/main/guides/bulk-product-jsonld-catalog-audit.md">Start a bulk Product JSON-LD QA project</a></p>
+<p><a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist/blob/main/guides/competitor-price-stock-monitoring.md">Compare published competitor prices on repeat runs</a></p>
+<p><a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist">Get a free offline Product JSON-LD checker</a></p>
+</section>
+</main>
+<footer><div class="container">Practical AI Lab · Educational estimator, not an Apify billing quote or financial guarantee.</div></footer>
+<script>
+(function(){
+ const ids=["events","runs","eventPrice","startPrice"];
+ const refs=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
+ const total=document.getElementById("total"),notes=document.getElementById("breakdown");
+ function calc(){
+  const n=Object.fromEntries(ids.map(id=>[id,Number(refs[id].value)]));
+  if(ids.some(id=>refs[id].value===""||!Number.isFinite(n[id])||n[id]<0||n[id]>1000000)||
+     !Number.isInteger(n.events)||!Number.isInteger(n.runs)){
+   total.textContent="Check your inputs";
+   notes.textContent="Use non-negative numbers and whole counts of events and runs.";
+   return;
+  }
+  const e=n.events*n.runs,estimate=e*n.eventPrice+n.runs*n.startPrice;
+  if(!Number.isFinite(estimate)){
+   total.textContent="Out of range";notes.textContent="Reduce the input values.";return;
+  }
+  const fmt=n=>"$"+n.toFixed(6).replace(/0+$/,"").replace(/\.$/,"");
+  total.textContent=fmt(estimate);
+  notes.textContent=e.toLocaleString()+" processed events × "+fmt(n.eventPrice)+
+   " + "+n.runs.toLocaleString()+" run starts × "+fmt(n.startPrice)+".";
+ }
+ ids.forEach(id=>refs[id].addEventListener("input",calc));
+ document.getElementById("calculator").addEventListener("submit",e=>e.preventDefault());
+ calc();
+})();
+</script>
+</body></html>

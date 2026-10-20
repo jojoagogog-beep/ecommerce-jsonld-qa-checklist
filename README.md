@@ -34,6 +34,10 @@ The example intentionally contains an incomplete Product/Offer to demonstrate wh
 
 [Browse every currently published Practical AI Lab Actor by keyword](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/catalog.html). This free page links directly to each Actor's live Apify listing and current pricing.
 
+## Plan pay-per-event costs before scaling
+
+Use the [free browser-only event-cost estimator](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/pricing-estimator.html) to model hypothetical processing volume and event charges. The inputs are examples, not live pricing. Always read the chosen Actor's Apify Pricing tab.
+
 ## 3. Scale to an ecommerce catalog with PAL on Apify
 
 If you are responsible for dozens of public product URLs, prefer a cloud Actor with a documented input schema, CSV/JSON exports, and a repeatable workflow.
