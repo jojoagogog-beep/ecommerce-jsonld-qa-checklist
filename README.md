@@ -30,6 +30,16 @@ python3 check_product_schema.py examples/product_incomplete.html
 
 The example intentionally contains an incomplete Product/Offer to demonstrate what a finding looks like. It does **not** crawl websites, scrape private accounts, generate fake reviews, access live stock, or make any network requests.
 
+## Free offline hreflang audit example
+
+For multilingual website QA, use the separate dependency-free [hreflang attribute checker](check_hreflang.py). It reviews a **single local HTML file**, flags duplicate locale tags, missing/relative alternate URLs and suspicious language formats, and returns JSON:
+
+```bash
+python3 check_hreflang.py examples/hreflang_sample.html --page-url https://www.example.com/us/example-product
+```
+
+It **does not crawl websites, validate reciprocal links, or verify indexing**. For an optional cloud batch review of up to 18 *public* URLs, see [PAL Hreflang Tag Checker](https://apify.com/practical_ai_lab_jp/my-actor-15) and consult the live Pricing tab before using it.
+
 ## Explore the complete public Actor catalog
 
 [Browse every currently published Practical AI Lab Actor by keyword](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/catalog.html). This free page links directly to each Actor's live Apify listing and current pricing.

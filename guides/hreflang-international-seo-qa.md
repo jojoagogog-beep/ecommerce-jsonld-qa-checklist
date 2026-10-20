@@ -26,7 +26,17 @@ For each localized product template, check:
 - **Canonical handling:** ensure canonical URLs and locale alternates describe consistent pages. Don't point all localized pages at one unrelated canonical.
 - **Changes after deploy:** compare the same list after a theme or routing release.
 
-## 3. Test the public markup in Apify
+## 3. Start with the free offline audit
+
+Before spending anything, download the [dependency-free offline hreflang checker](../check_hreflang.py) and [sample HTML](../examples/hreflang_sample.html) from this repository. Run:
+
+```bash
+python3 check_hreflang.py examples/hreflang_sample.html --page-url https://www.example.com/us/example-product
+```
+
+The JSON output highlights duplicate locale declarations and URLs or language codes that need review. The example uses **synthetic data** and does not access any live site. It checks only one local file; it cannot test target pages or reciprocal links.
+
+## 4. Test the public markup in Apify
 
 Open the [PAL Hreflang Tag Checker](https://apify.com/practical_ai_lab_jp/my-actor-15), then enter a *public HTTPS page you own or are authorized to audit*:
 
