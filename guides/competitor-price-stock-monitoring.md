@@ -4,6 +4,16 @@ A practical workflow for ecommerce pricing teams, catalog managers, and develope
 
 This tutorial uses [PAL Competitor Price & Stock Tracker on Apify](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta). It reads static `schema.org/Product` / `Offer` JSON-LD from public HTTPS product pages. It does not confirm checkout prices or warehouse stock, log in to shops, or render JavaScript storefronts.
 
+## 0. Try offline comparisons for free
+
+You can explore the workflow without running a paid Actor. Download the [free local snapshot comparison tool](../compare_product_snapshots.py) and two synthetic example files. Run:
+
+```bash
+python3 compare_product_snapshots.py examples/price_before.json examples/price_after.json --threshold 10
+```
+
+The script detects price moves, availability-label differences and added/removed products in two **local** JSON arrays. It does not retrieve current competitor data, check stock in warehouses, send alerts or consume Apify credits. The hosted PAL Actor adds public-page fetching, persistent baseline handling and a dataset workflow.
+
 ## 1. Establish your first baseline
 
 Open the [public example task](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/track-competitor-product-prices-and-stock) and inspect its input. Replace the sample URL with your public product-page URLs. A minimal example is:

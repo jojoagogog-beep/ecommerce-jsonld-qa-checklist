@@ -1,0 +1,5 @@
+[
+ {"id":"item-a","price":"29.99","currency":"USD","availability":"InStock"},
+ {"id":"item-b","price":"49.99","currency":"USD","availability":"InStock"},
+ {"id":"item-c","price":"9.99","currency":"USD","availability":"InStock"}
+]

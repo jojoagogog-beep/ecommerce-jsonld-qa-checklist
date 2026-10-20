@@ -40,6 +40,16 @@ python3 check_hreflang.py examples/hreflang_sample.html --page-url https://www.e
 
 It **does not crawl websites, validate reciprocal links, or verify indexing**. For an optional cloud batch review of up to 18 *public* URLs, see [PAL Hreflang Tag Checker](https://apify.com/practical_ai_lab_jp/my-actor-15) and consult the live Pricing tab before using it.
 
+## Free offline competitor-price snapshot comparison
+
+Try the [local price/availability comparison script](compare_product_snapshots.py) before subscribing to any recurring workflow. It compares two example JSON snapshots by product ID and reports added/removed products, price differences and **published** availability-label changes:
+
+```bash
+python3 compare_product_snapshots.py examples/price_before.json examples/price_after.json --threshold 10
+```
+
+The script makes **no web requests** and cannot retrieve real storefront prices. To automatically fetch public Product JSON-LD and compare later runs, see the [PAL Competitor Price & Stock Tracker](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta). Check current Apify pricing first.
+
 ## Explore the complete public Actor catalog
 
 [Browse every currently published Practical AI Lab Actor by keyword](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/catalog.html). This free page links directly to each Actor's live Apify listing and current pricing.
