@@ -14,10 +14,27 @@ import urllib.request
 from zoneinfo import ZoneInfo
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-URL="https://api.apify.com/v2/store?username=practical_ai_lab_jp&limit=100"
-with urllib.request.urlopen(urllib.request.Request(URL,headers={"User-Agent":"PAL-Public-Catalog-Generator/1.0"}),timeout=20) as response:
-    data=json.load(response)["data"]
-actors=[a for a in data.get("items",[]) if a.get("username")=="practical_ai_lab_jp" and a.get("name")]
+BASE="https://api.apify.com/v2/store?username=practical_ai_lab_jp&limit=100"
+actors=[]
+seen=set()
+offset=0
+for page in range(50):
+    url=BASE+"&offset="+str(offset)
+    with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"PAL-Public-Catalog-Generator/1.0"}),timeout=20) as response:
+        data=json.load(response)["data"]
+    batch=data.get("items",[])
+    for a in batch:
+        if a.get("username")=="practical_ai_lab_jp" and a.get("name") and a["name"] not in seen:
+            seen.add(a["name"])
+            actors.append(a)
+    offset += len(batch)
+    total=int(data.get("total",offset))
+    if offset>=total:
+        break
+    if not batch:
+        raise RuntimeError("Unexpected empty Apify Store page; refusing incomplete catalog")
+else:
+    raise RuntimeError("Apify Store pagination exceeds 5000 entries; refusing incomplete catalog")
 actors.sort(key=lambda a:(0 if "ECOMMERCE" in (a.get("categories") or []) else 1,(a.get("title") or "").casefold(),a["name"]))
 ESC=html.escape
 def val(v):
