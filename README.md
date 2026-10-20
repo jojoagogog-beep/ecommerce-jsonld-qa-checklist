@@ -55,6 +55,8 @@ If you are responsible for dozens of public product URLs, prefer a cloud Actor w
 ## Hands-on workflows
 
 - [Set up repeatable competitor price and stock monitoring](guides/competitor-price-stock-monitoring.md): baseline, repeat comparisons, pricing caveats and safe scheduling. This guide explains how to turn one-off checks into an operational workflow without claiming automatic notifications.
+- [Review hreflang language and region tags](guides/hreflang-international-seo-qa.md): international SEO migration QA and static HTML alternates.
+- [Review image alt text before a website launch](guides/image-alt-text-audit.md): missing vs. intentionally empty alt attributes, with practical page samples.
 - [Bulk ecommerce Product JSON-LD catalog audit](guides/bulk-product-jsonld-catalog-audit.md): sample selection, reviewing findings and scaling to 50-page batches with transparent costs.
 
 ## 4. When to run these checks
