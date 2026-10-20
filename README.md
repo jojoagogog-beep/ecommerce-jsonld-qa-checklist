@@ -83,6 +83,9 @@ If you are responsible for dozens of public product URLs, prefer a cloud Actor w
 - [Extract published Product JSON-LD prices and stock labels](guides/product-jsonld-price-extraction.md): static structured-data snapshots and repeat workflow limits.
 - [Bulk ecommerce Product JSON-LD catalog audit](guides/bulk-product-jsonld-catalog-audit.md): sample selection, reviewing findings and scaling to 50-page batches with transparent costs.
 
+- [Audit H1 headings and static HTML structure](guides/h1-heading-structure-qa.md): practical prelaunch checklist for product and content templates.
+- [Review SKU, GTIN and MPN identifiers in Product JSON-LD](guides/product-identifiers-sku-gtin-qa.md): distinguish applicable identifiers from missing data without claiming registry authentication.
+
 ## 4. When to run these checks
 
 - **Before publishing:** verify Product/Offer metadata on representative storefront pages.
