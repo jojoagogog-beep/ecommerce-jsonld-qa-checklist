@@ -44,6 +44,10 @@ If you are responsible for dozens of public product URLs, prefer a cloud Actor w
 
 **How to start:** Open a relevant tool → choose a public Example task or prefilled sample → run a small test if you accept the charges → inspect the Dataset → export CSV/JSON. Check the live **Pricing** tab first. A successfully processed record may incur a pay-per-event charge even if the audit reports no error. Running an Actor may also incur a start charge; confirm on its Pricing tab.
 
+## Hands-on workflows
+
+- [Set up repeatable competitor price and stock monitoring](guides/competitor-price-stock-monitoring.md): baseline, repeat comparisons, pricing caveats and safe scheduling. This guide explains how to turn one-off checks into an operational workflow without claiming automatic notifications.
+
 ## 4. When to run these checks
 
 - **Before publishing:** verify Product/Offer metadata on representative storefront pages.
