@@ -40,6 +40,12 @@ python3 check_hreflang.py examples/hreflang_sample.html --page-url https://www.e
 
 It **does not crawl websites, validate reciprocal links, or verify indexing**. For an optional cloud batch review of up to 18 *public* URLs, see [PAL Hreflang Tag Checker](https://apify.com/practical_ai_lab_jp/my-actor-15) and consult the live Pricing tab before using it.
 
+## Free FAQPage JSON-LD structure checker
+
+Try the [free browser-only FAQPage JSON-LD checker](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/faq-schema-checker.html). Paste one FAQPage JSON-LD object or one script block and review missing question names or accepted-answer text. It does not upload content, crawl websites, execute pasted code or start a paid Actor. This is a structural heuristic, not proof of answer accuracy, search indexing or Google rich-result eligibility.
+
+For recurring checks of public HTTPS FAQ pages, see [PAL FAQ Schema Audit](https://apify.com/practical_ai_lab_jp/pal-faq-schema-checker) and review the live Pricing tab before running.
+
 ## Free competitor price gap calculator
 
 Try the [free browser-only competitor price calculator](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-calculator.html) before setting up a paid monitoring workflow. Enter your own reference price and a competitor's **published** price in the **same currency**. It calculates the difference locally with no signup, data upload, live website fetching or Apify Actor run. All initial values are fictitious.
