@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free FAQPage JSON-LD Checker | Practical AI Lab</title>
+<meta name="description" content="Check one FAQPage JSON-LD block locally for missing questions and accepted answers. Free browser-only FAQ structured data audit with no sign-in or data upload.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/faq-schema-checker.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free FAQPage JSON-LD Checker | Practical AI Lab">
+<meta property="og:description" content="Check FAQPage structured data locally before a website launch. No signup, upload, Actor run or paid service.">
+<meta property="og:url" content="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/faq-schema-checker.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PAL Free FAQPage JSON-LD Checker","url":"https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/faq-schema-checker.html","applicationCategory":"DeveloperApplication","operatingSystem":"Web","description":"Free browser-only audit of pasted FAQPage JSON-LD markup for missing questions and accepted answer text.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Practical AI Lab"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#0b1725;--panel:#13283e;--line:#36506a;--txt:#f0f8ff;--sub:#c0d0df;--aqua:#69e0ca;--link:#98d0ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top left,#1b3a55,#0b1725 60%);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--txt)}
+header{border-bottom:1px solid var(--line);background:#0b192a}.wrap{max-width:920px;margin:auto;padding:20px}
+nav{display:flex;flex-wrap:wrap;gap:20px}nav a,a{color:var(--link)}h1{font-size:clamp(31px,6vw,49px);line-height:1.12;letter-spacing:-.035em;margin:12px 0}h2{font-size:23px;margin:0 0 14px}h3{font-size:18px}
+main{max-width:920px;margin:auto;padding:36px 20px 70px}.lead{max-width:760px;font-size:18px;color:var(--sub)}.eyebrow{color:var(--aqua);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:24px 0}
+label{font-weight:700;display:block;margin-bottom:10px}textarea{display:block;width:100%;min-height:265px;border-radius:12px;padding:14px;border:1px solid #718aa1;background:#081723;color:#effaff;font:13.5px/1.5 ui-monospace,Menlo,Consolas,monospace;resize:vertical}
+textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}
+button,.cta{display:inline-block;cursor:pointer;border:0;border-radius:10px;background:var(--aqua);color:#08202a;font-weight:800;font:inherit;padding:12px 19px;text-decoration:none}
+button{font-weight:800;margin-top:15px}button.secondary{background:#233e56;color:#e7f8ff;border:1px solid #59708a;margin-left:8px}
+small,.sub{color:var(--sub)}.status{font-weight:750;color:var(--aqua);font-size:19px}.problem{color:#ffd6b2}.ok{color:#99f2dd}.result{border-top:1px solid var(--line);padding-top:15px;margin-top:15px}
+#findings{padding-left:22px}#findings li{margin:9px 0}code{color:#b4ebff}footer{padding:28px 0;border-top:1px solid var(--line);color:var(--sub)}
+@media(max-width:570px){main{padding:24px 15px 55px}.panel{padding:17px}button.secondary{margin-left:0}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Site navigation"><a href="./">PAL home</a><a href="catalog.html">All PAL tools</a><a href="competitor-price-calculator.html">Price gap calculator</a></nav></div></header>
+<main>
+<p class="eyebrow">Practical AI Lab · Free on-page QA</p>
+<h1>Check FAQPage JSON-LD before a website launch.</h1>
+<p class="lead">Paste one <strong>FAQPage JSON-LD</strong> block to flag missing questions or accepted answer text. The check happens <strong>only in your browser</strong>. No login, data upload, paid Actor run, or network request is made by the checker.</p>
+<section class="panel" aria-labelledby="editorTitle">
+<h2 id="editorTitle">FAQ structured data checker</h2>
+<label for="source">JSON-LD object or one complete JSON-LD script block</label>
+<textarea id="source" spellcheck="false" aria-describedby="privacy"></textarea>
+<small id="privacy">Fictitious starter content is shown by default. The checker does not store your input. Use public or non-confidential examples.</small>
+<div><button id="check" type="button">Check FAQPage JSON-LD</button><button id="restore" class="secondary" type="button">Restore sample</button></div>
+<div class="result" aria-live="polite" aria-atomic="false">
+<p id="headline" class="status">Ready to check</p>
+<p id="summary" class="sub">Paste JSON-LD and choose Check.</p>
+<ol id="findings"></ol>
+</div>
+</section>
+<section class="panel">
+<h2>What does this free audit check?</h2>
+<ul>
+<li>One or more <code>FAQPage</code> nodes, including those in an <code>@graph</code> array</li>
+<li>A <code>mainEntity</code> list containing question objects</li>
+<li>A non-empty question <code>name</code> and at least one <code>acceptedAnswer.text</code> value per question</li>
+<li>Basic structural problems that could warrant a manual content review</li>
+</ul>
+<p class="sub">This is a limited structural heuristic. It does <strong>not</strong> verify whether answers are correct, eligible for Google rich results, indexed, accessible, or consistent with rendered pages. It does not crawl websites or execute JavaScript from pasted input.</p>
+</section>
+<section class="panel">
+<h2>Need recurring or multi-page FAQ QA?</h2>
+<p><strong>PAL FAQ Schema Audit</strong> examines published FAQPage structured data from static public HTTPS pages and reports missing question and accepted-answer fields. Its live Apify listing explains current pricing, input limits, and supported formats. Start with a small sample.</p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-faq-schema-checker?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=free_faq_checker" target="_blank" rel="noopener noreferrer">View FAQ Schema Audit &amp; live Pricing ↗</a>
+</section>
+<p class="sub">Practical AI Lab · Independent educational tool. No guarantee of SEO ranking, structured-data eligibility, or sales.</p>
+</main>
+<footer><div class="wrap">More tools: <a href="catalog.html">PAL App Catalog</a> · <a href="pricing-estimator.html">Free Apify event-cost estimator</a></div></footer>
+<script>
+(function() {
+"use strict";
+const EXAMPLE={
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"What does this demonstration check?","acceptedAnswer":{"@type":"Answer","text":"It checks a local JSON-LD FAQ example for missing published fields."}},
+  {"@type":"Question","name":"Where can I get a full report?","acceptedAnswer":{"@type":"Answer","text":""}}
+ ]
+};
+const el=id=>document.getElementById(id);
+function isType(value,name) {
+ if(Array.isArray(value))return value.some(v=>isType(v,name));
+ return typeof value==="string" && value.split(/[\/#]/).pop().toLowerCase()===name.toLowerCase();
+}
+function walk(value,found,depth=0){
+ if(depth>12)return;
+ if(Array.isArray(value)) {for(const v of value)walk(v,found,depth+1);return;}
+ if(!value||typeof value!=="object")return;
+ if(isType(value["@type"],"FAQPage"))found.push(value);
+ if(value["@graph"])walk(value["@graph"],found,depth+1);
+}
+function analyze(obj){
+ const nodes=[];walk(obj,nodes);
+ const issues=[];
+ if(!nodes.length){return {pages:0,questions:0,issues:["No FAQPage node found. Paste FAQPage JSON-LD, not arbitrary webpage content."]};}
+ let questions=0;
+ for(let p=0;p<nodes.length;p++){
+  const entry=nodes[p];
+  const q=entry.mainEntity;
+  if(q==null || (Array.isArray(q)&&q.length===0)){
+   issues.push("FAQPage "+(p+1)+": mainEntity questions are missing.");
+   continue;
+  }
+  const rows=Array.isArray(q)?q:[q];
+  for(let n=0;n<rows.length;n++){
+   questions++;
+   const row=rows[n],prefix="FAQPage "+(p+1)+", question "+(n+1)+": ";
+   if(!row||typeof row!=="object"){issues.push(prefix+"question must be a structured object.");continue;}
+   if(!isType(row["@type"],"Question"))issues.push(prefix+"missing @type Question.");
+   if(typeof row.name!=="string"||!row.name.trim())issues.push(prefix+"question name is missing.");
+   let answers=row.acceptedAnswer;
+   if(!answers){issues.push(prefix+"acceptedAnswer is missing.");continue;}
+   answers=Array.isArray(answers)?answers:[answers];
+   if(answers.length===0){issues.push(prefix+"acceptedAnswer is empty.");continue;}
+   if(!answers.some(a=>a&&typeof a==="object"&&typeof a.text==="string"&&a.text.trim())){
+    issues.push(prefix+"acceptedAnswer.text is missing or empty.");
+   }
+  }
+ }
+ return {pages:nodes.length,questions,issues};
+}
+function evaluate(raw){
+ let source=(raw||"").trim();
+ if(!source)return {error:"Paste JSON-LD first."};
+ if(source.length>120000)return {error:"Input exceeds the 120,000-character limit."};
+ if(/^<script\b/i.test(source)) {
+  source=source.replace(/^<script\b[^>]*>/i,"").replace(/<\/script>\s*$/i,"").trim();
+ }
+ try {return analyze(JSON.parse(source));}
+ catch(_){return {error:"Invalid JSON. Paste one JSON-LD object, an array, or one full script block."};}
+}
+function render(){
+ const report=evaluate(el("source").value),list=el("findings");
+ list.replaceChildren();
+ if(report.error){el("headline").textContent="Input needs attention";el("headline").className="status problem";el("summary").textContent=report.error;return;}
+ el("headline").textContent=report.issues.length?"Review "+report.issues.length+" finding(s)":"No missing FAQ fields detected";
+ el("headline").className="status "+(report.issues.length?"problem":"ok");
+ el("summary").textContent=report.pages+" FAQPage node(s), "+report.questions+" question(s) checked.";
+ for(const finding of report.issues){
+  const li=document.createElement("li");li.textContent=finding;list.appendChild(li);
+ }
+ if(!report.issues.length){const li=document.createElement("li");li.textContent="Basic structural fields are present. This does not guarantee eligibility or answer quality.";list.appendChild(li);}
+}
+el("check").addEventListener("click",render);
+el("restore").addEventListener("click",()=>{el("source").value=JSON.stringify(EXAMPLE,null,2);render();});
+el("source").value=JSON.stringify(EXAMPLE,null,2);
+render();
+})();
+</script>
+</body></html>
