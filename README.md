@@ -48,7 +48,7 @@ For recurring checks of public HTTPS FAQ pages, see [PAL FAQ Schema Audit](https
 
 ## Competitor price tracker: features, costs and first-run example
 
-The [PAL competitor price tracker buyer's guide](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-tracker.html) explains the first-run own-price comparison, repeat price monitoring, CSV/JSON exports, supported static Product JSON-LD/Open Graph data, limitations, and a clearly labeled example of pay-per-event charges. It links to [the live Apify product listing](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta) and its authoritative Pricing tab. The guide is free to read and does not trigger an Actor run.
+The [PAL competitor price tracker buyer's guide](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-tracker.html) explains the first-run own-price comparison, repeat price monitoring, CSV/JSON exports, supported static Product JSON-LD/Open Graph data, limitations, and a clearly labeled example of pay-per-event charges. It links to [the live Apify product listing](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta) and its authoritative Pricing tab. The guide is free to read and does not trigger an Actor run. Visit the [public first-run example](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/track-product-prices-from-open-graph-tags) to inspect its synthetic input, then read live pricing before initiating any Actor run.
 
 ## Free competitor price gap calculator
 
