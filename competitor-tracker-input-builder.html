@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Competitor Price Tracker Input Builder | Practical AI Lab</title>
+<meta name="description" content="Prepare valid JSON for PAL Competitor Price Tracker: public HTTPS product URLs, monitor ID, price-change threshold and optional first-run reference price. No account or upload.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-tracker-input-builder.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Competitor Price Tracker Input Builder | Practical AI Lab">
+<meta property="og:description" content="Configure a first-run or recurring product-price monitoring input without a charged Actor run.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PAL Competitor Price Tracker Input Builder","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-tracker-input-builder.html","description":"Free browser-only JSON input builder for PAL's published competitor price tracker.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#091625;--panel:#13283d;--line:#365069;--text:#eaf4fc;--muted:#c7d9e4;--mint:#7bedd0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+main{max-width:960px;margin:auto;padding:30px 20px 72px}nav{background:#102238;border-bottom:1px solid var(--line);padding:15px max(20px,calc((100vw - 960px)/2))}
+a{color:#9bd9ff}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+h1{font-size:clamp(30px,5vw,49px);line-height:1.12;margin:14px 0}h2{font-size:23px;margin:0 0 13px}
+p{color:var(--muted)}.lead{font-size:18px;max-width:790px}.tag{color:var(--mint);font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.panel{margin-top:24px;padding:25px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+label{display:block;margin:0 0 7px;font-weight:730}input,textarea{font:16px/1.45 ui-monospace,Consolas,monospace;color:#f3f8ff;background:#091827;border:1px solid #64839c;border-radius:8px;padding:12px;width:100%}
+textarea{resize:vertical;min-height:105px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{margin-bottom:18px}.hint{font-size:13px;color:var(--muted);margin:5px 0 0}
+button,.action{background:var(--mint);border:0;color:#092b30;border-radius:9px;padding:12px 20px;font-size:16px;font-weight:800;cursor:pointer}
+button.secondary{background:transparent;border:1px solid #9adccf;color:var(--text)}button:disabled{opacity:.5;cursor:not-allowed}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#081525;border:1px solid #52677d;padding:17px;border-radius:10px;color:#e6f7ff;font-size:13px;min-height:80px}
+#feedback{min-height:24px;font-weight:700}#feedback.error{color:#ffb4a5}#feedback.good{color:var(--mint)}
+ul,ol{color:var(--muted);padding-left:23px}.footer{border-top:1px solid var(--line);margin-top:32px;padding-top:16px;font-size:13px;color:var(--muted)}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.panel{padding:18px}}
+</style>
+</head>
+<body>
+<nav aria-label="Navigation"><a href="./">PAL home</a> · <a href="competitor-price-tracker.html">Price tracking guide</a> · <a href="catalog.html">All PAL tools</a></nav>
+<main>
+<span class="tag">Practical AI Lab · Free setup assistant</span>
+<h1>Prepare your competitor price tracking input in minutes.</h1>
+<p class="lead">Create a valid JSON configuration for the <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">PAL Competitor Price Tracker &amp; Stock Monitor</a>. Paste it into Apify when you are ready. Nothing on this page starts an Actor run or uploads your URLs.</p>
+<section class="panel" aria-labelledby="build-heading">
+<h2 id="build-heading">1. Configure your first check</h2>
+<form id="builder" novalidate>
+<div class="field"><label for="urls">Public product URLs (one HTTPS URL per line, maximum 50)</label>
+<textarea id="urls" rows="4" spellcheck="false" required>https://api.apify.com/v2/key-value-stores/DHMHtotPcN9CAKXYj/records/pal-open-graph-product-price-20261021.html</textarea>
+<p class="hint">A fictional public product page is prefilled. Replace it with your own supported product pages. Static Product/Offer JSON-LD or product-typed Open Graph pricing is required; JavaScript-only and logged-in pages are not supported.</p></div>
+<div class="grid">
+<div class="field"><label for="monitorId">Monitor ID</label><input id="monitorId" value="my-products" minlength="3" maxlength="40" pattern="[A-Za-z0-9_-]{3,40}" required><p class="hint">Reuse the same ID on later runs to compare price and availability labels. Letters, digits, underscore and hyphen only.</p></div>
+<div class="field"><label for="threshold">Alert threshold (%)</label><input id="threshold" type="number" value="5" min="0" max="1000" step="any" required><p class="hint">Changes meeting this threshold produce alert fields in the dataset. The Actor does not send notifications.</p></div>
+<div class="field"><label for="ownPrice">Optional own reference price</label><input id="ownPrice" type="number" min="0.01" step="any" placeholder="e.g. 45.00"><p class="hint">Only available for a single URL with one product offer. Leave empty otherwise.</p></div>
+<div class="field"><label for="currency">Reference price currency (3-letter code)</label><input id="currency" value="USD" maxlength="3" pattern="[A-Za-z]{3}" placeholder="USD"><p class="hint">Price comparison requires the same currency as the product page. No conversion is performed.</p></div>
+</div>
+<div class="actions"><button type="submit">Generate input JSON</button><button class="secondary" type="button" id="copy" disabled>Copy input JSON</button></div>
+<p id="feedback" role="status" aria-live="polite"></p>
+</form>
+<pre id="result" aria-label="Prepared Actor input JSON">Your generated input will appear here.</pre>
+</section>
+<section class="panel">
+<h2>2. Inspect the example and pricing</h2>
+<ol>
+<li>Check that your public pages have supported pricing metadata. This tool validates the JSON input format, not the content of external websites.</li>
+<li>Inspect the <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/track-product-prices-from-open-graph-tags">published synthetic example</a> and the Actor's current <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">Pricing tab</a>.</li>
+<li>If appropriate, paste your copied JSON into the Actor's JSON input editor and start with one URL. An Apify execution can incur charges.</li>
+<li>For repeated checks, keep the same monitor ID and review the exported CSV or JSON before scheduling.</li>
+</ol>
+<p><a href="pricing-estimator.html">Estimate event charges with the free calculator</a> · <a href="competitor-price-tracker.html">View capabilities, limitations and first-run demonstration</a></p>
+<p><a class="action" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=input_builder_ready">Open PAL Actor &amp; current Pricing ↗</a></p>
+</section>
+<footer class="footer">This builder runs only in your browser and stores no submitted data. It does not guarantee that a page exposes parseable products, that prices match checkout prices, or that a later Apify run is free. Practical AI Lab, October 2026.</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var form=document.getElementById("builder"), feedback=document.getElementById("feedback");
+var result=document.getElementById("result"), copy=document.getElementById("copy");
+var last="";
+function status(message,isError){feedback.textContent=message;feedback.className=isError?"error":"good";}
+form.addEventListener("submit",function(ev){
+ ev.preventDefault();last="";copy.disabled=true;
+ var urls=document.getElementById("urls").value.split(/\r?\n/).map(function(x){return x.trim();}).filter(Boolean);
+ if(urls.length<1||urls.length>50){status("Enter between 1 and 50 HTTPS product URLs.",true);return;}
+ if(new Set(urls).size!==urls.length){status("Remove duplicate URLs to avoid unnecessary paid checks.",true);return;}
+ for(var i=0;i<urls.length;i++){
+  try{
+   var u=new URL(urls[i]);
+   if(u.protocol!=="https:"||!u.hostname||u.username||u.password||/^(localhost|127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.)/i.test(u.hostname))throw new Error("invalid");
+  }catch(err){status("URL "+(i+1)+" must be a public HTTPS link with no embedded credentials.",true);return;}
+ }
+ var monitor=document.getElementById("monitorId").value.trim();
+ if(!/^[A-Za-z0-9_-]{3,40}$/.test(monitor)){status("Monitor ID must contain 3-40 ASCII letters, digits, _ or -.",true);return;}
+ var rawThreshold=document.getElementById("threshold").value,threshold=Number(rawThreshold);
+ if(rawThreshold.trim()===""||!Number.isFinite(threshold)||threshold<0||threshold>1000){status("Threshold must be between 0 and 1000.",true);return;}
+ var doc={urls:urls,monitorId:monitor,resetBaseline:false,emitUnchanged:true,minPriceChangePercent:threshold};
+ var rawPrice=document.getElementById("ownPrice").value.trim();
+ if(rawPrice!==""){
+  var price=Number(rawPrice),currency=document.getElementById("currency").value.trim().toUpperCase();
+  if(urls.length!==1||!Number.isFinite(price)||price<=0||!(/^[A-Z]{3}$/.test(currency))){status("An own-price comparison needs exactly one URL, a positive price and a three-letter currency.",true);return;}
+  doc.referencePrices={};
+  doc.referencePrices[urls[0]]={price:price,currency:currency};
+ }
+ last=JSON.stringify(doc,null,2);
+ result.textContent=last;copy.disabled=false;status("Input ready. Review it, then copy and paste into the Actor's JSON editor.",false);
+});
+copy.addEventListener("click",function(){
+ if(!last)return;
+ if(!navigator.clipboard||!navigator.clipboard.writeText){status("Select and copy the JSON text above manually.",true);return;}
+ navigator.clipboard.writeText(last).then(function(){status("Input JSON copied. Check Apify Pricing before running.",false);}).catch(function(){status("Copy was blocked. Select and copy the JSON text manually.",true);});
+});
+})();
+</script>
+</body></html>
