@@ -43,15 +43,42 @@ def strip_html(value):
     value=re.sub(r"<[^>]+>"," ",str(value or ""))
     return re.sub(r"\s+"," ",value).strip()
 def card(actor):
-    title=val(actor.get("title") or actor["name"])
-    desc=val(strip_html(actor.get("description") or "Focused public-data QA workflow.")[:230])
+    raw_title=str(actor.get("title") or actor["name"])
+    raw_desc=strip_html(actor.get("description") or "Focused public-data QA workflow.")
+    # Use a word boundary: never publish a broken mid-word product claim.
+    display_desc=raw_desc
+    if len(raw_desc)>260:
+        display_desc=raw_desc[:260].rsplit(" ",1)[0].rstrip(" .,;:")+"…"
+    title=val(raw_title)
+    desc=val(display_desc)
     categories=actor.get("categories") or []
     badge="Ecommerce" if "ECOMMERCE" in categories else "Developer tools"
     href="https://apify.com/practical_ai_lab_jp/"+urllib.parse.quote(actor["name"],safe="-")
-    return (f'<article class="card" data-search="{val((title+" "+desc+" "+badge).lower())}">'
+    searchable=val((raw_title+" "+raw_desc+" "+badge).lower())
+    return (f'<article class="card" data-search="{searchable}">'
             f'<span class="tag">{badge}</span><h2>{title}</h2><p>{desc}</p>'
             f'<a class="card-link" href="{href}">View features & live pricing ↗</a></article>')
 items="\n".join(card(a) for a in actors)
+# Useful search-intent links, not claims about ratings, popularity or rank.
+workflow_spec=[
+    ("Compare published competitor prices", "pal-competitor-price-stock-delta",
+     "Monitor public product price and stock-label changes across runs."),
+    ("Audit ecommerce Product structured data", "pal-product-stock-schema-check",
+     "Check Product/Offer JSON-LD, identifiers and published offer fields."),
+    ("Check product names and SKU", "pal-product-name-schema-audit",
+     "Review missing product-name and SKU fields in structured data."),
+    ("Inspect H1 and heading hierarchy", "pal-h1-heading-checker",
+     "Find missing or repeated H1 elements on public HTML pages."),
+    ("Review image alt attributes", "pal-image-alt-text-checker",
+     "Audit missing or empty image alternatives for accessibility QA."),
+    ("Review hreflang annotations", "my-actor-15",
+     "Inspect language and region references in static public markup."),
+]
+workflow_html="\n".join(
+    '<li><a href="https://apify.com/practical_ai_lab_jp/'+val(slug)+'">'+val(label)+'</a>'
+    '<span>'+val(explainer)+'</span></li>'
+    for label,slug,explainer in workflow_spec if slug in seen
+)
 all_names=[{"@type":"ListItem","position":i,
             "name":a.get("title") or a["name"],
             "url":"https://apify.com/practical_ai_lab_jp/"+urllib.parse.quote(a["name"],safe="-")}
@@ -85,10 +112,17 @@ input{{font:inherit;width:min(100%,530px);padding:13px 15px;border:1px solid #5c
 .card h2{{font-size:1.11rem;line-height:1.32;margin:12px 0}}
 .card p{{color:#bccde0;font-size:.95rem;flex:1}}
 .card-link{{font-weight:700;margin-top:12px}}
+.workflows{{padding:18px 0 14px}}
+.workflows h2{{font-size:1.4rem;margin:0 0 5px}}
+.workflows p{{color:#bacbdc;margin:0 0 13px}}
+.workflows ul{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;list-style:none;padding:0}}
+.workflows li{{border:1px solid #30445c;border-radius:11px;padding:12px 15px}}
+.workflows li a{{display:block;font-weight:700}}
+.workflows li span{{display:block;color:#bacbdc;font-size:.9rem;margin-top:3px}}
 .notes{{border-top:1px solid #253c57;padding:22px 0 50px;color:#bacbdc}}
 footer{{background:#0d1727;border-top:1px solid #2c425c;padding:27px 0;color:#c1d1df}}
 @media(max-width:790px){{.grid{{grid-template-columns:repeat(2,minmax(0,1fr))}}}}
-@media(max-width:560px){{.grid{{grid-template-columns:1fr}}}}
+@media(max-width:560px){{.grid,.workflows ul{{grid-template-columns:1fr}}}}
 </style>
 <script type="application/ld+json">{ld_json}</script>
 </head>
@@ -100,6 +134,11 @@ footer{{background:#0d1727;border-top:1px solid #2c425c;padding:27px 0;color:#c1
 <p class="lead">Browse all <strong>{len(actors)}</strong> publicly listed Practical AI Lab Actors. Find schema audits, price monitoring, SEO metadata checks and tools for structured data. Start with a small public example and check each tool's live pricing.</p>
 <div class="controls"><label for="search">Search tools:</label><input id="search" type="search" aria-label="Filter PAL tools by keyword" placeholder="Try product, price, schema, H1, stock …"><span id="count" aria-live="polite">{len(actors)} tools</span></div>
 </div></section>
+<section class="container workflows" aria-labelledby="workflow-title">
+<h2 id="workflow-title">Choose a tool for the work you need done</h2>
+<p>Start with a relevant example, verify that it matches your public data, and check the live Apify pricing before running.</p>
+<ul>{workflow_html}</ul>
+</section>
 <section class="container"><div class="grid" id="list">
 {items}
 </div></section>
