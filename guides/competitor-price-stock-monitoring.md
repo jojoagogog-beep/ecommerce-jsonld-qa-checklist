@@ -2,7 +2,28 @@
 
 A practical workflow for ecommerce pricing teams, catalog managers, and developers who want to compare **published** product price and availability data over time.
 
-This tutorial uses [PAL Competitor Price & Stock Tracker on Apify](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta). It reads static `schema.org/Product` / `Offer` JSON-LD from public HTTPS product pages. It does not confirm checkout prices or warehouse stock, log in to shops, or render JavaScript storefronts.
+This tutorial uses [PAL Competitor Price & Stock Tracker on Apify](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta). It reads public static HTML, preferring `schema.org/Product` / `Offer` JSON-LD and, when absent, strictly product-typed Open Graph price metadata with validated numeric amounts and currency. It does not verify checkout prices, warehouse stock, store login or JavaScript-rendered storefronts.
+
+## Free first-run price comparison
+
+Use the [free browser price-gap calculator](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-calculator.html) to compare your own reference price with a competitor's published price without signup or paid Actor use. It runs locally in the browser, and the example prices are fictitious.
+
+The hosted PAL Actor also supports an optional `referencePrices` map so you can obtain a useful comparison **on your first paid run**, even before change history exists:
+
+```json
+{
+  "urls": ["https://api.apify.com/v2/key-value-stores/DHMHtotPcN9CAKXYj/records/pal-open-graph-product-price-20261021.html"],
+  "monitorId": "example-reference-gap",
+  "referencePrices": {
+    "https://api.apify.com/v2/key-value-stores/DHMHtotPcN9CAKXYj/records/pal-open-graph-product-price-20261021.html": {
+      "price": 45,
+      "currency": "USD"
+    }
+  }
+}
+```
+
+This synthetic page initially publishes USD 39.90, so a comparison against USD 45 is 11.33% lower when the page stays unchanged. The Actor skips reference comparison when the page has multiple offers or its currency does not match. It does not convert currencies or recommend a selling price. **Successful priced product checks may still be billed**, including unchanged checks, and a run-start charge may apply. Check the [live Pricing tab](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta) before running.
 
 ## 0. Try offline comparisons for free
 
@@ -48,7 +69,7 @@ When `emitUnchanged=false`, unchanged rows are omitted but **may still be billed
 
 ## 3. Make it useful in real operations
 
-1. Run a small sample and verify that your target pages expose static Product/Offer JSON-LD.
+1. Run a small sample and verify the target pages expose static Product/Offer JSON-LD or explicitly product-typed Open Graph price metadata.
 2. Use Apify's Schedule functionality for checks at a cadence that justifies the expense.
 3. Send actionable output to a supported webhook or downstream integration if you need notifications.
 4. Review dataset rows and export CSV/JSON for reporting or API integrations.
@@ -60,7 +81,7 @@ A recurring schedule triggers repeated work, which can incur recurring Apify cha
 
 - New `monitorId` on every run → unrelated baselines, not useful deltas.
 - `resetBaseline=true` → comparison history resets for that group.
-- Dynamic-only data without JSON-LD → results may be missing or incomplete.
+- Pages with only JavaScript-rendered prices and no supported static product metadata → the Actor cannot retrieve those prices.
 - `alertSignal=true` → a dataset field, not an SMS or email.
 - Published `InStock` labels → not verified inventory.
 - `emitUnchanged=false` → smaller dataset, not necessarily lower processing charges.

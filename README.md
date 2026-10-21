@@ -40,6 +40,12 @@ python3 check_hreflang.py examples/hreflang_sample.html --page-url https://www.e
 
 It **does not crawl websites, validate reciprocal links, or verify indexing**. For an optional cloud batch review of up to 18 *public* URLs, see [PAL Hreflang Tag Checker](https://apify.com/practical_ai_lab_jp/my-actor-15) and consult the live Pricing tab before using it.
 
+## Free competitor price gap calculator
+
+Try the [free browser-only competitor price calculator](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-calculator.html) before setting up a paid monitoring workflow. Enter your own reference price and a competitor's **published** price in the **same currency**. It calculates the difference locally with no signup, data upload, live website fetching or Apify Actor run. All initial values are fictitious.
+
+If you need automated checks of real public product pages, [PAL Competitor Price Tracker](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta) supports optional first-run `referencePrices`, Product JSON-LD and explicitly product-typed Open Graph pricing metadata. Monitoring may incur event and run-start charges; read the live Pricing tab first. It cannot verify checkout prices or warehouse stock.
+
 ## Free offline competitor-price snapshot comparison
 
 Try the [local price/availability comparison script](compare_product_snapshots.py) before subscribing to any recurring workflow. It compares two example JSON snapshots by product ID and reports added/removed products, price differences and **published** availability-label changes:

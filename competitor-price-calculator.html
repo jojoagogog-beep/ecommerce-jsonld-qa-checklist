@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free competitor price gap calculator for ecommerce teams. Compare two published prices in the same currency, then monitor competitor price and stock-label changes with Practical AI Lab on Apify.">
+<meta name="robots" content="index,follow">
+<title>Free Competitor Price Gap Calculator | Practical AI Lab</title>
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Competitor Price Gap Calculator | Practical AI Lab">
+<meta property="og:description" content="Compare your published price with a competitor's listed price, then discover repeatable price monitoring with PAL.">
+<meta property="og:url" content="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PAL Free Competitor Price Gap Calculator","url":"https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-calculator.html","description":"Free in-browser same-currency competitor price comparison calculator. No signup, upload or paid run.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Practical AI Lab"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#0b1521;--panel:#13243a;--line:#294159;--txt:#eef8ff;--sub:#afc6d6;--mint:#63dfc4;--blue:#82b7ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 10%,#1c3b51 0%,#0b1521 55%);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--txt)}
+main{max-width:840px;margin:0 auto;padding:40px 20px 72px}small.kicker{letter-spacing:.16em;color:var(--mint);font-weight:750;text-transform:uppercase}
+h1{font-size:clamp(29px,6vw,49px);line-height:1.1;margin:14px 0 14px;letter-spacing:-.035em}h2{font-size:21px;margin:0 0 12px}
+.lead{color:var(--sub);font-size:18px;max-width:690px}.pill{display:inline-block;color:var(--mint);border:1px solid #347f78;border-radius:30px;padding:4px 11px;font-size:13px;font-weight:650}
+.panel{margin-top:28px;border-radius:16px;border:1px solid var(--line);background:var(--panel);padding:24px}
+.inputs{display:grid;grid-template-columns:1fr 1fr 130px;gap:14px}
+label{display:block;font-size:13px;color:var(--sub);font-weight:700;margin:0 0 7px}
+input,select{width:100%;font:600 20px/1.3 inherit;border-radius:9px;border:1px solid #54708a;color:var(--txt);background:#0d1b2b;padding:11px}
+input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.output{margin-top:19px;padding:20px;border-radius:12px;background:#0b1b2b;border:1px solid #344e61}
+.metric{font-size:clamp(26px,5vw,40px);font-weight:790;color:var(--mint);line-height:1.25;letter-spacing:-.03em}
+.value{font-size:19px;font-weight:720;color:var(--txt);margin-top:8px}#status{color:var(--sub);margin:10px 0 0;font-size:14px}
+a.cta{display:inline-block;color:#071c25;background:var(--mint);border-radius:10px;padding:12px 19px;text-decoration:none;font-weight:750;margin:8px 0}
+a.textlink{color:var(--blue)}p,li{max-width:760px}ul{padding-left:20px;color:var(--sub)}
+.footer{margin-top:28px;border-top:1px solid var(--line);padding-top:18px;color:var(--sub);font-size:13px}
+@media(max-width:650px){main{padding:30px 16px 55px}.inputs{grid-template-columns:1fr 1fr}.currency-field{grid-column:1/-1}.panel{padding:18px}}
+@media(max-width:440px){.inputs{grid-template-columns:1fr}}
+</style>
+</head>
+<body><nav aria-label="Site navigation" style="padding:15px max(20px,calc((100vw - 840px)/2));border-bottom:1px solid #294159;background:#0e1d2c"><a class="textlink" href="./">PAL home</a> · <a class="textlink" href="catalog.html">All PAL tools</a> · <a class="textlink" href="pricing-estimator.html">Cost calculator</a></nav><main>
+<small class="kicker">Practical AI Lab · Free ecommerce tool</small>
+<h1>Know your price gap before you track the market.</h1>
+<p class="lead">Compare your own price with a competitor's <strong>published</strong> price in the same currency. No login, API key, paid run or data upload is required for this calculator.</p>
+<span class="pill">Sample values are entirely synthetic</span>
+<section class="panel" aria-labelledby="heading">
+<h2 id="heading">Competitor price gap</h2>
+<div class="inputs">
+<div><label for="ownPrice">Your reference price</label><input id="ownPrice" type="number" step="0.01" min="0.01" max="1000000000" value="45.00" inputmode="decimal" required></div>
+<div><label for="competitorPrice">Competitor published price</label><input id="competitorPrice" type="number" step="0.01" min="0" max="1000000000" value="39.90" inputmode="decimal" required></div>
+<div class="currency-field"><label for="currency">Both prices in</label><select id="currency">
+<option>USD</option><option>EUR</option><option>JPY</option><option>GBP</option><option>CAD</option><option>AUD</option><option>INR</option><option>SGD</option><option>THB</option>
+</select></div>
+</div>
+<div class="output" role="status" aria-live="polite" aria-atomic="true">
+<div class="metric" id="gapPercent">Competitor is 11.33% cheaper</div>
+<div class="value" id="gapAmount">Difference: −$5.10</div>
+<p id="status">Compared against your reference price of $45.00</p>
+</div>
+</section>
+<section class="panel" aria-labelledby="next">
+<h2 id="next">Want to monitor changes across many product pages?</h2>
+<p>PAL Competitor Price Tracker &amp; Stock Monitor fetches up to 50 public HTTPS product URLs per run, reads static Product JSON-LD or explicitly product-typed Open Graph pricing metadata, and compares published prices or availability labels across repeated checks.</p>
+<p>Optional <code>referencePrices</code> lets you compare a single product's published price against your own price <strong>from the first run</strong>. Export CSV/JSON. Automatic email alerts and checkout price verification are not included.</p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_github_pages&utm_medium=organic&utm_campaign=free_price_gap_calculator" target="_blank" rel="noopener noreferrer">View the PAL Actor and live Pricing →</a>
+<p><a class="textlink" href="https://api.apify.com/v2/key-value-stores/DHMHtotPcN9CAKXYj/records/pal-open-graph-product-price-20261021.html" target="_blank" rel="noopener noreferrer">See the fictitious public product-price test page</a></p>
+</section>
+<section class="panel" aria-labelledby="scope">
+<h2 id="scope">What the result does (and doesn't) mean</h2>
+<ul>
+<li><strong>Difference</strong> is competitor published price minus your reference price. Negative means lower than yours.</li>
+<li><strong>Gap %</strong> is relative to your price, not a predicted profit margin or recommended selling price.</li>
+<li>Enter values in the <strong>same currency</strong>. No exchange conversion is performed.</li>
+<li>Tax, shipping, promotions, sales restrictions and checkout availability may change the real customer total.</li>
+<li>This calculator runs in your browser. It does not retrieve websites, send prices to PAL, or trigger any Apify Actor runs.</li>
+</ul>
+</section>
+<p class="footer">Practical AI Lab — free education and product comparison preview. All initial prices are fictitious. This page does not guarantee sales, savings, search ranking or stock availability.</p>
+</main>
+<script>
+(function(){
+"use strict";
+const own=document.getElementById("ownPrice"), other=document.getElementById("competitorPrice");
+const curr=document.getElementById("currency");
+const pct=document.getElementById("gapPercent"), amount=document.getElementById("gapAmount"), note=document.getElementById("status");
+function fmt(n,c){
+  try{return new Intl.NumberFormat("en-US",{style:"currency",currency:c,maximumFractionDigits:2}).format(n);}
+  catch(_){return n.toFixed(2)+" "+c;}
+}
+function update(){
+  const a=Number(own.value),b=Number(other.value),code=curr.value;
+  if(own.value===""||other.value===""||!Number.isFinite(a)||!Number.isFinite(b)||a<=0||a>1e9||b<0||b>1e9){
+    pct.textContent="Enter two valid prices";amount.textContent="";note.textContent="Your reference must be greater than zero. Both values must be at most 1,000,000,000.";return;
+  }
+  const gap=b-a,p=100*gap/a;
+  const label=Math.abs(p)<0.005?"the same as":(gap<0?"cheaper than":"more expensive than");
+  pct.textContent=Math.abs(p)<0.005?"Competitor matches your price":"Competitor is "+Math.abs(p).toFixed(2)+"% "+label+" yours";
+  amount.textContent="Competitor minus your price: "+fmt(gap,code);
+  note.textContent="Reference "+fmt(a,code)+" · Published competitor price "+fmt(b,code);
+}
+for(const field of [own,other,curr]){field.addEventListener("input",update);field.addEventListener("change",update);}
+update();
+}());
+</script></body></html>
