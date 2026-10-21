@@ -127,7 +127,7 @@ footer{{background:#0d1727;border-top:1px solid #2c425c;padding:27px 0;color:#c1
 <script type="application/ld+json">{ld_json}</script>
 </head>
 <body>
-<header><div class="container nav"><div class="brand">PRACTICAL AI LAB</div><nav><a href="./">Free guide & workflows</a> · <a href="https://apify.com/practical_ai_lab_jp">Apify Store ↗</a></nav></div></header>
+<header><div class="container nav"><div class="brand">PRACTICAL AI LAB</div><nav><a href="./">Free guide & workflows</a> · <a href="product-jsonld-preview.html">Free Product schema preview</a> · <a href="https://apify.com/practical_ai_lab_jp">Apify Store ↗</a></nav></div></header>
 <main>
 <section class="hero"><div class="container">
 <h1>Find a focused tool for your next ecommerce data task.</h1>
@@ -145,7 +145,7 @@ footer{{background:#0d1727;border-top:1px solid #2c425c;padding:27px 0;color:#c1
 <section class="notes"><div class="container">
 <h2>Before you run an Actor</h2>
 <p>These are public listings, not claims that an Actor can log into stores or verify checkout prices. Most PAL tools inspect <strong>static public HTML or Product JSON-LD</strong>. Pricing, eligibility, input limits, and capabilities vary. Check the current listing and pricing, then start small.</p>
-<p>Prefer a no-cost starting point? Read the <a href="./">free offline Product JSON-LD checklist</a>, our <a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist/blob/main/guides/bulk-product-jsonld-catalog-audit.md">catalog migration guide</a>, or use the <a href="pricing-estimator.html">event-cost calculator</a> and <a href="hreflang-checker.html">free hreflang checker</a>.</p>
+<p>Prefer a no-cost starting point? Try our <a href="product-jsonld-preview.html">free in-browser Product JSON-LD preview</a>, read the <a href="./">offline Product JSON-LD checklist</a>, our <a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist/blob/main/guides/bulk-product-jsonld-catalog-audit.md">catalog migration guide</a>, or use the <a href="pricing-estimator.html">event-cost calculator</a> and <a href="hreflang-checker.html">free hreflang checker</a>.</p>
 </div></section>
 </main><footer><div class="container">Practical AI Lab · <a href="https://apify.com/practical_ai_lab_jp">Full Apify Store</a> · <a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist">Source and tutorials</a></div></footer>
 <script>

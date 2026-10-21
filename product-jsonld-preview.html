@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Product JSON-LD Checker & Schema Preview | Practical AI Lab</title>
+<meta name="description" content="Paste Product JSON-LD or HTML locally to preview name, price, currency, availability, images and SKU gaps. No signup, upload, scraping or API charges.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/product-jsonld-preview.html">
+<meta property="og:title" content="Free Product JSON-LD Checker | Practical AI Lab">
+<meta property="og:description" content="Inspect pasted Product schema locally, then choose a hosted audit for batch checks.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PAL Free Product JSON-LD Preview","applicationCategory":"DeveloperApplication","operatingSystem":"Web","url":"https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/product-jsonld-preview.html","description":"Browser-only preview of static Product JSON-LD fields. No URL fetching or full schema validation.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#0a1524;--card:#13273c;--stroke:#385369;--text:#ecf6fc;--soft:#c3d6e3;--mint:#83e7d0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+nav{background:#102237;border-bottom:1px solid var(--stroke);padding:16px max(20px,calc((100vw - 1020px)/2))}
+a{color:#9bd9ff}a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+main{max-width:1020px;padding:38px 20px 65px;margin:auto}
+h1{font-size:clamp(29px,5.1vw,50px);line-height:1.12;margin:10px 0 16px}
+h2{font-size:23px;margin:0 0 12px}h3{font-size:17px;margin:12px 0 6px}
+.tag{font-size:13px;letter-spacing:.08em;font-weight:800;color:var(--mint);text-transform:uppercase}
+p{color:var(--soft)}.lead{font-size:19px;max-width:790px}
+.panel{margin-top:23px;border:1px solid var(--stroke);border-radius:14px;padding:23px;background:var(--card)}
+textarea{width:100%;min-height:220px;resize:vertical;border-radius:10px;padding:14px;border:1px solid #62869f;background:#0b1827;color:var(--text);font:14px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:14px}
+button,.cta{display:inline-block;background:var(--mint);color:#082a33;font-weight:800;padding:12px 19px;border-radius:9px;border:0;text-decoration:none;cursor:pointer;font-size:16px}
+button.secondary{background:transparent;border:1px solid #a5ebdf;color:var(--text)}
+.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.result{padding:14px;background:#0d1e30;border:1px solid #476178;border-radius:9px}
+.result strong{display:block;color:var(--mint);margin-bottom:3px}.result span{white-space:pre-wrap;overflow-wrap:anywhere}
+.status{min-height:24px;font-weight:750;color:var(--mint)}.error{color:#ffb7a8}
+ul,ol{color:var(--soft);padding-left:23px}li{margin-bottom:8px}
+.finding{margin:0 0 9px;border:1px solid #3d5a6b;border-radius:8px;padding:11px 14px;background:#0f2132}
+.finding strong{color:#edfaf6}.sub{font-size:13px;color:var(--soft)}.footer{border-top:1px solid var(--stroke);margin-top:32px;padding-top:17px;color:var(--soft);font-size:13px}
+@media(max-width:620px){.panel{padding:17px}.results{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><a href="./">PAL home</a> · <a href="catalog.html">All PAL tools</a> · <a href="competitor-tracker-input-builder.html">Price tracker setup</a></nav>
+<main>
+<span class="tag">Practical AI Lab · Free technical SEO preview</span>
+<h1>Check your Product JSON-LD before auditing a whole catalog.</h1>
+<p class="lead">Paste a Product JSON-LD block or the HTML containing it. Review structured product names, published offer prices, currencies, availability and selected quality-assurance gaps. The analysis happens <strong>inside this browser</strong>, with no upload or paid Apify run.</p>
+<section class="panel">
+<h2>1. Paste Product structured data</h2>
+<label for="source">JSON-LD or static HTML</label>
+<textarea id="source" spellcheck="false" aria-label="Product JSON-LD or HTML input">{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Example Canvas Backpack",
+  "image": "https://example.com/backpack.jpg",
+  "sku": "CANVAS-100",
+  "brand": {"@type": "Brand", "name": "Example Goods"},
+  "offers": {
+    "@type": "Offer",
+    "price": "49.90",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}</textarea>
+<p class="sub">Only pasted text is inspected, up to 512 KB. No website is fetched. HTML support reads static <code>application/ld+json</code> script blocks, not JavaScript-rendered content.</p>
+<div class="actions">
+<button type="button" id="check">Analyze pasted schema</button>
+<button type="button" class="secondary" id="sample">Restore example</button>
+</div>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+</section>
+<section class="panel" aria-labelledby="results-heading">
+<h2 id="results-heading">2. Local findings</h2>
+<div id="summary" class="results" aria-live="polite"></div>
+<div id="findings" aria-live="polite"><p>Click “Analyze pasted schema” to inspect the example.</p></div>
+<p class="sub">This is a heuristic preview, not a Google Rich Results test, Schema.org compliance certification, live inventory check or search-ranking forecast. Missing values can be appropriate depending on the product and use case.</p>
+</section>
+<section class="panel">
+<h2>3. Need repeatable checks on real product pages?</h2>
+<p>The hosted <strong>PAL Ecommerce Product Schema Checker — 50 URLs</strong> inspects public pages, reports additional Product/Offer and catalog QA signals, and supports reviewable exports for larger jobs. It checks static public HTML, not pages available only after login or client-side JavaScript rendering.</p>
+<div class="actions">
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=product_jsonld_free_preview">View hosted schema checker &amp; live Pricing ↗</a>
+<a href="catalog.html">Compare all PAL tools ↗</a>
+</div>
+<p class="sub">The free preview never starts the hosted Actor. Running the hosted checker may incur charges; examine its current Pricing and supported input fields first.</p>
+</section>
+<footer class="footer">Practical AI Lab · Browser-only structured-data education · October 2026. No performance or SEO ranking guarantees.</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var textarea=document.getElementById("source"),status=document.getElementById("status");
+var findings=document.getElementById("findings"),summary=document.getElementById("summary");
+var original=textarea.value;
+var MAX_BYTES=512*1024,MAX_BLOCKS=40,MAX_PRODUCTS=50;
+function isProduct(t){
+ var xs=Array.isArray(t)?t:[t];
+ return xs.some(function(x){return typeof x==="string"&&/^(?:https?:\/\/(?:www\.)?schema\.org\/)?Product$/i.test(x);});
+}
+function has(x){return x!==undefined&&x!==null&&x!==""&&!(Array.isArray(x)&&x.length===0);}
+function fmt(x){
+ if(!has(x))return "Not declared";
+ if(typeof x==="object"){
+  if(Array.isArray(x))return x.map(fmt).join(", ");
+  return String(x.name||x.url||x["@id"]||JSON.stringify(x).slice(0,160));
+ }
+ return String(x);
+}
+function collect(root,acc,depth){
+ if(depth>8||acc.length>=MAX_PRODUCTS)return;
+ if(!root||typeof root!=="object")return;
+ if(Array.isArray(root)){for(var i=0;i<root.length;i++)collect(root[i],acc,depth+1);return;}
+ if(isProduct(root["@type"]))acc.push(root);
+ for(var key of ["@graph","mainEntity","itemListElement"]){
+  if(root[key])collect(root[key],acc,depth+1);
+ }
+ if(root.item&&typeof root.item==="object")collect(root.item,acc,depth+1);
+}
+function parseSource(input){
+ if(input.length>MAX_BYTES)throw Error("Input is too large. Paste at most 512 KB.");
+ var texts=[];
+ if(input.trim().startsWith("<")){
+  var blocks=input.match(/<script\b[^>]*\btype\s*=\s*(?:"application\/ld\+json"|'application\/ld\+json'|application\/ld\+json)[^>]*>[\s\S]*?<\/script\s*>/gi)||[];
+  if(blocks.length>MAX_BLOCKS)throw Error("Too many JSON-LD blocks (limit 40).");
+  texts=blocks.map(function(block){
+   var i=block.indexOf(">"),end=block.search(/<\/script\s*>/i);
+   return block.slice(i+1,end);
+  });
+ }else{texts=[input.trim()];}
+ if(!texts.length)throw Error("No application/ld+json script blocks found in the pasted HTML.");
+ var roots=[];
+ for(var i=0;i<texts.length;i++){
+  try{roots.push(JSON.parse(texts[i]));}
+  catch(_){throw Error("JSON-LD block "+(i+1)+" contains invalid JSON.");}
+ }
+ return roots;
+}
+function issue(label,msg,kind,all){
+ all.push({label:label,msg:msg,kind:kind});
+}
+function inspect(source){
+ var roots=parseSource(source),products=[];
+ roots.forEach(function(x){collect(x,products,0);});
+ if(!products.length)throw Error("No schema.org Product object detected. Paste Product JSON-LD (or HTML that contains it).");
+ var reports=[];
+ products.forEach(function(p,i){
+  var offers=p.offers,offer=Array.isArray(offers)?offers[0]:offers;
+  var brand=typeof p.brand==="object"?(p.brand&&p.brand.name):p.brand;
+  var money=offer?(has(offer.price)?offer.price:(has(offer.lowPrice)?offer.lowPrice:null)):null;
+  var currency=offer&&offer.priceCurrency;
+  var availability=offer&&offer.availability;
+  var issues=[];
+  if(!has(p.name))issue("Product name","No product name declared; inspect the source markup.","Review",issues);
+  if(!has(p.image))issue("Product image","No image field; confirm whether it applies to your page.","Consider",issues);
+  if(!has(brand))issue("Brand","No brand field; optional for some product types.","Consider",issues);
+  if(![p.sku,p.gtin,p.gtin8,p.gtin12,p.gtin13,p.gtin14,p.mpn].some(has))issue("Product identifier","No SKU, GTIN or MPN field. Use only applicable verified identifiers.","Consider",issues);
+  if(!offer||typeof offer!=="object")issue("Published offer","No offers object found; product prices may not be available in structured data.","Review",issues);
+  else {
+   if(!has(money))issue("Published price","No Offer price or AggregateOffer lowPrice found.","Review",issues);
+   if(!has(currency))issue("Currency","No priceCurrency declared in the selected offer.","Review",issues);
+   if(!has(availability))issue("Availability label","No structured availability label declared; this does not establish actual inventory.","Consider",issues);
+   if(Array.isArray(offers)&&offers.length>1)issue("Multiple offers","Preview shows the first offer only; check all offers in a full audit.","Info",issues);
+  }
+  reports.push({index:i+1,name:fmt(p.name),image:fmt(p.image),brand:fmt(brand),identifier:fmt(p.sku||p.gtin||p.gtin8||p.gtin12||p.gtin13||p.gtin14||p.mpn),price:fmt(money),currency:fmt(currency),availability:fmt(availability),issues:issues});
+ });
+ return {blockCount:roots.length,productCount:products.length,reports:reports};
+}
+function add(parent,tag,value,cls){
+ var el=document.createElement(tag);
+ if(cls)el.className=cls;
+ el.textContent=value;
+ parent.appendChild(el);
+ return el;
+}
+function render(){
+ status.className="status";
+ summary.replaceChildren();findings.replaceChildren();
+ try{
+  var result=inspect(textarea.value);
+  add(summary,"div","Detected "+result.productCount+" Product record(s)","result");
+  add(summary,"div","Parsed "+result.blockCount+" JSON-LD block(s)","result");
+  var issues=0;
+  result.reports.forEach(function(p){
+   var wrap=add(findings,"div","","finding");
+   add(wrap,"h3","Product "+p.index+": "+p.name);
+   add(wrap,"p","Price: "+p.price+" "+p.currency+" · Availability: "+p.availability);
+   add(wrap,"p","Brand: "+p.brand+" · Identifier: "+p.identifier);
+   add(wrap,"p","Image: "+p.image);
+   if(!p.issues.length)add(wrap,"p","No gaps detected by this limited preview.");
+   p.issues.forEach(function(f){add(wrap,"p",f.kind+" · "+f.label+": "+f.msg);issues++;});
+  });
+  status.textContent=result.productCount+" Product record(s) inspected · "+issues+" review note(s).";
+ }catch(e){
+  status.className="status error";status.textContent=e.message;
+  add(findings,"p","Paste valid Product JSON-LD or static HTML and try again.");
+ }
+}
+document.getElementById("check").addEventListener("click",render);
+document.getElementById("sample").addEventListener("click",function(){textarea.value=original;render();});
+render();
+})();
+</script>
+</body></html>

@@ -30,6 +30,12 @@ python3 check_product_schema.py examples/product_incomplete.html
 
 The example intentionally contains an incomplete Product/Offer to demonstrate what a finding looks like. It does **not** crawl websites, scrape private accounts, generate fake reviews, access live stock, or make any network requests.
 
+## Free browser-only Product JSON-LD checker
+
+Use the [free Product JSON-LD preview](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/product-jsonld-preview.html) to paste a Product JSON-LD object, an `@graph` or static HTML with `application/ld+json` script tags. Check product names, price, currency, published availability, brand, image and SKU/GTIN/MPN clues entirely inside your browser. This preview never fetches a URL, uploads input or starts an Apify Actor; it is not a full Schema.org or Google Rich Results validator.
+
+For a reviewable batch audit of up to 50 public product URLs, see [PAL Ecommerce Product Schema Checker](https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check) and inspect current Pricing before running.
+
 ## Free offline hreflang audit example
 
 For multilingual website QA, use the separate dependency-free [hreflang attribute checker](check_hreflang.py). It reviews a **single local HTML file**, flags duplicate locale tags, missing/relative alternate URLs and suspicious language formats, and returns JSON:
