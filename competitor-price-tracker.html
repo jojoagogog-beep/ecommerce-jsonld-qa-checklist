@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Competitor Price Tracker for Public Product URLs | Practical AI Lab</title>
+<meta name="description" content="Track published competitor product prices and stock labels across up to 50 public URLs. Compare against your own price on the first run, then export CSV/JSON price changes with PAL on Apify.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-tracker.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Competitor Price Tracker &amp; Stock Monitor | Practical AI Lab">
+<meta property="og:description" content="Know the competitor price gap on the first run, then monitor published price and stock-label changes. Check live Apify Pricing before running.">
+<meta property="og:url" content="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-tracker.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Competitor Price Tracker for Public Product URLs","url":"https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-tracker.html","description":"How to compare public competitor prices on the first run and monitor published price or stock-label changes with Practical AI Lab on Apify.","publisher":{"@type":"Organization","name":"Practical AI Lab"},"about":{"@type":"SoftwareApplication","name":"PAL Competitor Price Tracker & Stock Monitor","url":"https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta","applicationCategory":"BusinessApplication","operatingSystem":"Cloud"}}</script>
+<style>
+:root{color-scheme:dark;--bg:#0b1523;--panel:#14253a;--line:#36516c;--txt:#eef7ff;--muted:#c0d1e0;--mint:#74ebc9;--link:#98d1ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top left,#1d3654 0,#0b1523 65%);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt)}
+a{color:var(--link)}a:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+header{border-bottom:1px solid var(--line);background:#0c1c2e}.wrap{max-width:1010px;margin:0 auto;padding:0 20px}
+nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center;padding:18px 0}.brand{font-weight:800;letter-spacing:.08em;color:var(--txt);margin-right:auto}
+.hero{padding:66px 0 45px}h1{font-size:clamp(33px,5.6vw,56px);line-height:1.1;letter-spacing:-.04em;max-width:850px;margin:12px 0 22px}
+h2{font-size:clamp(22px,3vw,29px);line-height:1.22;margin:0 0 18px}h3{font-size:19px;margin:0 0 8px}
+p{margin:9px 0 16px}.lead{font-size:19px;max-width:790px;color:var(--muted)}.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.13em;font-size:13px;color:var(--mint)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 14px}.btn{display:inline-block;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:800;background:var(--mint);color:#062631}
+.btn.secondary{background:transparent;color:var(--txt);border:1px solid #829bb0}.fineprint{font-size:13px;color:var(--muted)}
+main section:not(.hero){padding:33px 0;border-top:1px solid #293d53}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:21px}
+.panel p,.panel li{color:var(--muted)}.number{color:var(--mint);font-weight:800;font-size:12px;letter-spacing:.09em}
+.example{display:grid;grid-template-columns:1fr 1fr;gap:15px}.result{font-size:clamp(27px,5vw,39px);font-weight:820;color:var(--mint)}.figure{font-weight:750;font-size:21px;color:var(--txt)}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}code{color:#a9e8f7}
+pre{background:#091724;border:1px solid #3a526b;border-radius:12px;overflow-x:auto;padding:17px;font-size:12px;line-height:1.55;white-space:pre}
+table{border-collapse:collapse;width:100%;margin:16px 0;table-layout:fixed}th,td{border-bottom:1px solid #39516b;text-align:left;padding:14px 10px;vertical-align:top}th{color:var(--mint)}
+aside{border-left:3px solid var(--mint);padding:12px 18px;background:#14293b;border-radius:6px}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.example{grid-template-columns:1fr}.hero{padding:44px 0 30px}th,td{padding:9px 5px;font-size:14px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Primary navigation">
+<span class="brand">PRACTICAL AI LAB</span>
+<a href="./">Home</a>
+<a href="catalog.html">All 30 PAL tools</a>
+<a href="competitor-price-calculator.html">Free price-gap calculator</a>
+</nav></div></header>
+<main>
+<section class="hero"><div class="wrap">
+<span class="eyebrow">For ecommerce operators and pricing analysts</span>
+<h1>Competitor price tracking that starts with a useful comparison.</h1>
+<p class="lead">Compare your own reference price with a competitor's <strong>published product price on the first run</strong>, then monitor price and published availability-label changes on later runs. PAL handles up to <strong>50 public product URLs per run</strong> and exports CSV/JSON datasets.</p>
+<div class="actions">
+<a class="btn" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=buyer_intent_competitor_price_tracker" rel="noopener noreferrer">Open competitor price tracker &amp; live Pricing ↗</a>
+<a class="btn secondary" href="competitor-price-calculator.html">Try one price comparison free ↗</a>
+</div>
+<p class="fineprint">Public static HTML only: Product/Offer JSON-LD or explicitly product-typed Open Graph pricing metadata. No store login, checkout price verification, warehouse stock confirmation or automatic email notifications.</p>
+</div></section>
+<section><div class="wrap">
+<h2>Choose the result your pricing team needs.</h2>
+<div class="grid">
+<article class="panel"><span class="number">01 · FIRST CHECK</span><h3>Your price vs. competitor</h3><p>Use the optional <code>referencePrices</code> input to compare your own product reference price with a single competitor offer before any change history exists. Currency must match.</p></article>
+<article class="panel"><span class="number">02 · LATER CHECKS</span><h3>Price and stock-label deltas</h3><p>Reuse the same <code>monitorId</code> across checks to detect changes to supported published price data and advertised availability labels. A threshold can flag notable deltas.</p></article>
+<article class="panel"><span class="number">03 · OPERATIONAL EXPORTS</span><h3>Reviewable CSV/JSON output</h3><p>Export records for pricing reviews or downstream integrations. The Actor reports alert signals as fields; it does not deliver alerts automatically.</p></article>
+</div></div></section>
+<section><div class="wrap">
+<h2>Illustrative first-run result—before setting up monitoring</h2>
+<p>The following values describe a <strong>fictional</strong> product page, not a real retail competitor. First-run comparison is available using optional <code>referencePrices</code>.</p>
+<div class="example">
+<div class="panel"><p>Own reference price</p><p class="figure">USD 45.00</p><p>Published competitor price</p><p class="figure">USD 39.90</p><p class="fineprint">Only same-currency, single-offer comparisons are shown. Multiple offers or mismatched currencies are skipped.</p></div>
+<div class="panel"><p>Competitor minus own price</p><p class="result">−11.33%</p><p>Difference: <strong>−USD 5.10</strong></p><p class="fineprint">This is not a forecast of profit or a suggested selling price. It excludes taxes, shipping and promotions.</p><a href="competitor-price-calculator.html">Change the sample prices in our free browser calculator ↗</a></div>
+</div>
+<h3 style="margin-top:24px">Example Actor input</h3>
+<pre aria-label="Synthetic first-run JSON input">{
+  "urls": [
+    "https://api.apify.com/v2/key-value-stores/DHMHtotPcN9CAKXYj/records/pal-open-graph-product-price-20261021.html"
+  ],
+  "monitorId": "example-my-brand-prices",
+  "referencePrices": {
+    "https://api.apify.com/v2/key-value-stores/DHMHtotPcN9CAKXYj/records/pal-open-graph-product-price-20261021.html": {
+      "price": 45,
+      "currency": "USD"
+    }
+  }
+}</pre>
+<p class="fineprint">The sample URL hosts synthetic public product data. Replace it with supported public product pages. An Apify Actor execution may incur charges even if it processes only a sample.</p>
+<a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist/blob/main/guides/competitor-price-stock-monitoring.md">Read the complete first-run and repeat-monitoring guide ↗</a>
+</div></section>
+<section><div class="wrap">
+<h2>What will a run cost?</h2>
+<p>At verification on October 21, 2026, the public Actor listed a <strong>USD 0.009 charge per successfully processed priced product offer</strong> and a <strong>USD 0.00005 run-start event</strong>. The figures below are event-fee illustrations, not live price quotes or guaranteed invoice totals.</p>
+<table>
+<thead><tr><th>Illustrative check</th><th>Pricing-event assumption</th><th>Estimated event fees</th></tr></thead>
+<tbody>
+<tr><td>1 product URL, once</td><td>1 product-check, 1 run start</td><td>USD 0.00905</td></tr>
+<tr><td>5 product URLs, once</td><td>5 product-checks, 1 run start</td><td>USD 0.04505</td></tr>
+<tr><td>50 product URLs, once</td><td>50 product-checks, 1 run start</td><td>USD 0.45005</td></tr>
+</tbody>
+</table>
+<aside><strong>Always check the live <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">Apify Pricing tab</a> before running.</strong> Prices and billing behavior can change. Additional platform usage, failed runs or product metadata variations can change final charges. Repeating runs incurs new costs.</aside>
+<p>Want to calculate another scenario? <a href="pricing-estimator.html">Try the free browser-only Apify event-cost estimator ↗</a></p>
+</div></section>
+<section><div class="wrap">
+<h2>Before choosing a competitor monitoring tool</h2>
+<div class="grid">
+<article class="panel"><h3>Does it support your pages?</h3><p>Verify the target publicly accessible HTTPS page contains static Product JSON-LD with a supported offer, or product-specific Open Graph price tags. Prices generated only by JavaScript or after store login are not supported.</p></article>
+<article class="panel"><h3>Can it monitor real stock?</h3><p>It reads advertised availability labels from page metadata. These are not guaranteed to match actual inventory, checkout stock or fulfillment conditions.</p></article>
+<article class="panel"><h3>Do I need alerts?</h3><p>The Actor exposes comparison fields and threshold signals in its results. Connect an external supported integration yourself if notifications are needed; automated messages are not part of the Actor.</p></article>
+</div>
+<div class="actions">
+<a class="btn" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=buyer_intent_competitor_price_tracker" rel="noopener noreferrer">View PAL Competitor Price Tracker &amp; Pricing ↗</a>
+<a class="btn secondary" href="catalog.html">Compare other PAL ecommerce QA tools ↗</a>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">Practical AI Lab · Independent product-use guidance · Published October 2026. This page makes no guarantee of rankings, ROI, real stock or price savings.</div></footer>
+</body></html>
