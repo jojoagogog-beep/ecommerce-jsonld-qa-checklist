@@ -46,6 +46,10 @@ Try the [free browser-only FAQPage JSON-LD checker](https://jojoagogog-beep.gith
 
 For recurring checks of public HTTPS FAQ pages, see [PAL FAQ Schema Audit](https://apify.com/practical_ai_lab_jp/pal-faq-schema-checker) and review the live Pricing tab before running.
 
+## Competitor price tracker: features, costs and first-run example
+
+The [PAL competitor price tracker buyer's guide](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-tracker.html) explains the first-run own-price comparison, repeat price monitoring, CSV/JSON exports, supported static Product JSON-LD/Open Graph data, limitations, and a clearly labeled example of pay-per-event charges. It links to [the live Apify product listing](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta) and its authoritative Pricing tab. The guide is free to read and does not trigger an Actor run.
+
 ## Free competitor price gap calculator
 
 Try the [free browser-only competitor price calculator](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-calculator.html) before setting up a paid monitoring workflow. Enter your own reference price and a competitor's **published** price in the **same currency**. It calculates the difference locally with no signup, data upload, live website fetching or Apify Actor run. All initial values are fictitious.
