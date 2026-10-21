@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<meta name="description" content="Synthetic public test page for verifying breadcrumb, FAQ, JSON-LD syntax, schema types, and outbound link safety checks.">
+<title>PAL Synthetic Schema & Link QA Demonstration</title>
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/examples/pal-structured-data-audit-demo.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAL Synthetic Schema & Link QA Demonstration">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "PAL Home",
+      "item": "https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quality demos",
+      "item": "https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/catalog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Synthetic schema audit demo",
+      "item": "https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/examples/pal-structured-data-audit-demo.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is being checked on this page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is a synthetic HTML fixture for testing static breadcrumb and FAQ schema, JSON-LD types, and external links."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is one FAQ answer intentionally incomplete?"
+    }
+  ]
+}
+</script>
+<style>
+:root{color-scheme:light;font-family:system-ui,-apple-system,Segoe UI,sans-serif}body{margin:0;background:#f3f6fb;color:#16253e}
+main{max-width:850px;margin:0 auto;padding:40px 22px}h1{font-size:clamp(28px,5vw,42px);line-height:1.15}
+section{padding:18px 0;border-top:1px solid #ccd6e3}code{font-family:ui-monospace,Menlo,Consolas,monospace}
+a{color:#125daa}a:focus-visible{outline:3px solid #146dc7;outline-offset:3px}
+.notice{background:#e5ecf5;padding:15px 19px;border-radius:10px}li{margin:8px 0}
+</style>
+</head>
+<body>
+<main>
+<p><a href="../catalog.html">Practical AI Lab · Back to public tools</a></p>
+<h1>Synthetic structured-data and link-quality test page</h1>
+<p class="notice"><strong>Demo data only.</strong> This page is an intentionally designed test fixture, not an actual ecommerce product or company FAQ. It contains one deliberately incomplete FAQ answer and one unsafe-attribute example to demonstrate what QA tools detect. No private information, store login, checkout, or real merchant data is used.</p>
+<section>
+<h2>BreadcrumbList sample</h2>
+<nav aria-label="Breadcrumb">
+<a href="../">PAL Home</a> → <a href="../catalog.html">Quality demos</a> → Synthetic schema audit demo
+</nav>
+<p>Three ordered breadcrumb entries are published as valid JSON-LD.</p>
+</section>
+<section>
+<h2>FAQPage sample</h2>
+<h3>What is being checked on this page?</h3>
+<p>Static breadcrumb/FAQ JSON-LD, schema types, and external links.</p>
+<h3>Why is one FAQ answer intentionally incomplete?</h3>
+<p>The second FAQPage <code>acceptedAnswer</code> property is deliberately absent so a validator can flag it; this is not guidance for production markup.</p>
+</section>
+<section>
+<h2>Outbound link security sample</h2>
+<p>Review these two deliberate HTML examples.</p>
+<ul>
+<li>Correct <code>rel</code>: <a href="https://www.example.net/" target="_blank" rel="noopener noreferrer">Safe external link example</a></li>
+<li>Missing <code>rel</code> on purpose: <a href="https://www.example.org/" target="_blank">Unsafe-attribute example (for testing only)</a></li>
+</ul>
+</section>
+<section>
+<h2>Expected static QA observations</h2>
+<ul>
+<li>Breadcrumb structured data: one <code>BreadcrumbList</code> with three ordered positions</li>
+<li>FAQ structured data: one <code>FAQPage</code> with two questions, one with a missing acceptedAnswer field</li>
+<li>JSON-LD syntax: both script blocks parse as JSON</li>
+<li>Schema type inventory: top-level <code>BreadcrumbList</code> and <code>FAQPage</code> nodes</li>
+<li>External link check: two <code>target="_blank"</code> links, one deliberately missing <code>noopener</code>/<code>noreferrer</code></li>
+</ul>
+<p>Tool results are heuristic and are not claims of Google rich-result eligibility or website security certification.</p>
+</section>
+</main>
+</body>
+</html>
