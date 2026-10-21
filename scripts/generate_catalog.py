@@ -136,6 +136,7 @@ footer{{background:#0d1727;border-top:1px solid #2c425c;padding:27px 0;color:#c1
 </div></section>
 <section class="container workflows" aria-labelledby="workflow-title">
 <h2 id="workflow-title">Choose a tool for the work you need done</h2>
+<p>Need FAQ, BreadcrumbList, JSON-LD syntax, outbound-link or schema-type checks? <a href="schema-audit-quickstart.html">Use five ready-to-copy example inputs</a> before launching a charged run.</p>
 <p>Start with a relevant example, verify that it matches your public data, and check the live Apify pricing before running.</p>
 <ul>{workflow_html}</ul>
 </section>

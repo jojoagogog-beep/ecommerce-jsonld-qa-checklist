@@ -46,6 +46,10 @@ python3 check_hreflang.py examples/hreflang_sample.html --page-url https://www.e
 
 It **does not crawl websites, validate reciprocal links, or verify indexing**. For an optional cloud batch review of up to 18 *public* URLs, see [PAL Hreflang Tag Checker](https://apify.com/practical_ai_lab_jp/my-actor-15) and consult the live Pricing tab before using it.
 
+## Five ready-to-paste schema audit inputs
+
+Prepare the correct public test page and input JSON for [five PAL website quality Actors](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/schema-audit-quickstart.html): FAQPage, BreadcrumbList, JSON-LD syntax, external-link safety and schema type inventory. This page does not execute any Actor. Apify pricing still applies if you choose to run one.
+
 ## Free FAQPage JSON-LD structure checker
 
 Try the [free browser-only FAQPage JSON-LD checker](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/faq-schema-checker.html). Paste one FAQPage JSON-LD object or one script block and review missing question names or accepted-answer text. It does not upload content, crawl websites, execute pasted code or start a paid Actor. This is a structural heuristic, not proof of answer accuracy, search indexing or Google rich-result eligibility.
