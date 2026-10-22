@@ -1,0 +1,295 @@
+{
+  "publicActorCount": 35,
+  "publicExampleTaskCount": 57,
+  "privateTasksExcluded": 4,
+  "examples": [
+    {
+      "actorSlug": "my-actor-1",
+      "taskName": "audit-ecommerce-return-policy-schema-fields",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-1/examples/audit-ecommerce-return-policy-schema-fields"
+    },
+    {
+      "actorSlug": "pal-product-image-schema-audit",
+      "taskName": "audit-product-image-jsonld-and-alt-text",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-image-schema-audit/examples/audit-product-image-jsonld-and-alt-text"
+    },
+    {
+      "actorSlug": "pal-product-name-schema-audit",
+      "taskName": "audit-product-names-and-sku-structured-data",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-name-schema-audit/examples/audit-product-names-and-sku-structured-data"
+    },
+    {
+      "actorSlug": "pal-product-offer-currency-check",
+      "taskName": "audit-ecommerce-product-prices-and-currencies",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-offer-currency-check/examples/audit-ecommerce-product-prices-and-currencies"
+    },
+    {
+      "actorSlug": "pal-product-stock-schema-check",
+      "taskName": "audit-product-listing-price-stock-sku",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check/examples/audit-product-listing-price-stock-sku"
+    },
+    {
+      "actorSlug": "pal-product-stock-schema-check",
+      "taskName": "audit-product-schema-before-catalog-migration",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check/examples/audit-product-schema-before-catalog-migration"
+    },
+    {
+      "actorSlug": "my-actor",
+      "taskName": "batch-export-product-catalog-prices",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor/examples/batch-export-product-catalog-prices"
+    },
+    {
+      "actorSlug": "pal-product-name-schema-audit",
+      "taskName": "check-missing-product-name-and-sku",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-name-schema-audit/examples/check-missing-product-name-and-sku"
+    },
+    {
+      "actorSlug": "pal-product-name-schema-audit",
+      "taskName": "check-product-names-and-skus-before-import",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-name-schema-audit/examples/check-product-names-and-skus-before-import"
+    },
+    {
+      "actorSlug": "my-actor",
+      "taskName": "inspect-product-jsonld-after-theme-update",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor/examples/inspect-product-jsonld-after-theme-update"
+    },
+    {
+      "actorSlug": "pal-product-offer-currency-check",
+      "taskName": "check-product-offer-price-currency-before-launch",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-offer-currency-check/examples/check-product-offer-price-currency-before-launch"
+    },
+    {
+      "actorSlug": "my-actor-2",
+      "taskName": "check-product-shipping-price-and-delivery-schema",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-2/examples/check-product-shipping-price-and-delivery-schema"
+    },
+    {
+      "actorSlug": "pal-competitor-price-stock-delta",
+      "taskName": "track-product-prices-from-open-graph-tags",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/track-product-prices-from-open-graph-tags"
+    },
+    {
+      "actorSlug": "pal-product-stock-schema-check",
+      "taskName": "compare-complete-and-incomplete-product-markup",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check/examples/compare-complete-and-incomplete-product-markup"
+    },
+    {
+      "actorSlug": "pal-multi-offer-schema-audit",
+      "taskName": "compare-product-offer-prices-from-jsonld",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-multi-offer-schema-audit/examples/compare-product-offer-prices-from-jsonld"
+    },
+    {
+      "actorSlug": "pal-competitor-price-stock-delta",
+      "taskName": "detect-small-competitor-price-movements",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/detect-small-competitor-price-movements"
+    },
+    {
+      "actorSlug": "my-actor",
+      "taskName": "extract-product-prices-sku-stock-to-csv",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor/examples/extract-product-prices-sku-stock-to-csv"
+    },
+    {
+      "actorSlug": "my-actor",
+      "taskName": "extract-product-price-and-stock-from-one-url",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor/examples/extract-product-price-and-stock-from-one-url"
+    },
+    {
+      "actorSlug": "pal-product-image-schema-audit",
+      "taskName": "find-product-image-alt-seo-issues",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-image-schema-audit/examples/find-product-image-alt-seo-issues"
+    },
+    {
+      "actorSlug": "my-actor-4",
+      "taskName": "find-ecommerce-store-policy-and-contact-links",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-4/examples/find-ecommerce-store-policy-and-contact-links"
+    },
+    {
+      "actorSlug": "pal-product-image-schema-audit",
+      "taskName": "find-incomplete-product-image-metadata",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-image-schema-audit/examples/find-incomplete-product-image-metadata"
+    },
+    {
+      "actorSlug": "pal-product-stock-schema-check",
+      "taskName": "find-missing-product-jsonld-fields",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check/examples/find-missing-product-jsonld-fields"
+    },
+    {
+      "actorSlug": "pal-product-offer-currency-check",
+      "taskName": "find-missing-offer-price-currency-fields",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-offer-currency-check/examples/find-missing-offer-price-currency-fields"
+    },
+    {
+      "actorSlug": "pal-review-schema-auditor",
+      "taskName": "find-missing-ecommerce-product-review-schema",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-review-schema-auditor/examples/find-missing-ecommerce-product-review-schema"
+    },
+    {
+      "actorSlug": "my-actor-2",
+      "taskName": "find-missing-product-shipping-schema-terms",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-2/examples/find-missing-product-shipping-schema-terms"
+    },
+    {
+      "actorSlug": "my-actor-3",
+      "taskName": "find-missing-product-gtin-sku-mpn-fields",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-3/examples/find-missing-product-gtin-sku-mpn-fields"
+    },
+    {
+      "actorSlug": "my-actor-4",
+      "taskName": "locate-store-return-and-contact-policy-pages",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-4/examples/locate-store-return-and-contact-policy-pages"
+    },
+    {
+      "actorSlug": "pal-review-schema-auditor",
+      "taskName": "inspect-product-review-jsonld-markup",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-review-schema-auditor/examples/inspect-product-review-jsonld-markup"
+    },
+    {
+      "actorSlug": "pal-competitor-price-stock-delta",
+      "taskName": "monitor-competitor-discounts-over-10-percent",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/monitor-competitor-discounts-over-10-percent"
+    },
+    {
+      "actorSlug": "pal-competitor-price-stock-delta",
+      "taskName": "detect-product-availability-changes",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/detect-product-availability-changes"
+    },
+    {
+      "actorSlug": "pal-competitor-price-stock-delta",
+      "taskName": "track-competitor-product-prices-and-stock",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/track-competitor-product-prices-and-stock"
+    },
+    {
+      "actorSlug": "pal-aggregate-rating-checker",
+      "taskName": "verify-product-rating-schema-metadata",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-aggregate-rating-checker/examples/verify-product-rating-schema-metadata"
+    },
+    {
+      "actorSlug": "my-actor-12",
+      "taskName": "audit-incomplete-page-meta-description",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-12/examples/audit-incomplete-page-meta-description"
+    },
+    {
+      "actorSlug": "pal-h1-heading-checker",
+      "taskName": "audit-heading-structure-on-incomplete-pages",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-h1-heading-checker/examples/audit-heading-structure-on-incomplete-pages"
+    },
+    {
+      "actorSlug": "my-actor-15",
+      "taskName": "audit-multilingual-hreflang-url-tags",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-15/examples/audit-multilingual-hreflang-url-tags"
+    },
+    {
+      "actorSlug": "pal-utm-link-hygiene-check",
+      "taskName": "audit-utm-campaign-links-before-email-launch",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-utm-link-hygiene-check/examples/audit-utm-campaign-links-before-email-launch"
+    },
+    {
+      "actorSlug": "pal-external-link-security",
+      "taskName": "find-unsafe-external-links-opening-new-tabs",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-external-link-security/examples/find-unsafe-external-links-opening-new-tabs"
+    },
+    {
+      "actorSlug": "pal-faq-schema-checker",
+      "taskName": "audit-faq-questions-with-missing-accepted-answers",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-faq-schema-checker/examples/audit-faq-questions-with-missing-accepted-answers"
+    },
+    {
+      "actorSlug": "my-actor-15",
+      "taskName": "check-hreflang-for-multilingual-catalog-launch",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-15/examples/check-hreflang-for-multilingual-catalog-launch"
+    },
+    {
+      "actorSlug": "pal-breadcrumb-schema-checker",
+      "taskName": "find-missing-breadcrumblist-jsonld",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-breadcrumb-schema-checker/examples/find-missing-breadcrumblist-jsonld"
+    },
+    {
+      "actorSlug": "my-actor-14",
+      "taskName": "check-noindex-tags-before-website-launch",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-14/examples/check-noindex-tags-before-website-launch"
+    },
+    {
+      "actorSlug": "my-actor-16",
+      "taskName": "check-open-graph-social-share-previews",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-16/examples/check-open-graph-social-share-previews"
+    },
+    {
+      "actorSlug": "my-actor-11",
+      "taskName": "run-on-page-seo-checklist-with-fixes",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-11/examples/run-on-page-seo-checklist-with-fixes"
+    },
+    {
+      "actorSlug": "pal-internal-link-auditor",
+      "taskName": "export-internal-navigation-links-for-seo-qa",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-internal-link-auditor/examples/export-internal-navigation-links-for-seo-qa"
+    },
+    {
+      "actorSlug": "pal-h1-heading-checker",
+      "taskName": "find-duplicate-h1-headings-in-product-html",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-h1-heading-checker/examples/find-duplicate-h1-headings-in-product-html"
+    },
+    {
+      "actorSlug": "pal-json-ld-syntax-checker",
+      "taskName": "find-invalid-jsonld-on-public-pages",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-json-ld-syntax-checker/examples/find-invalid-jsonld-on-public-pages"
+    },
+    {
+      "actorSlug": "pal-image-alt-text-checker",
+      "taskName": "find-missing-image-alt-text-for-accessibility",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-image-alt-text-checker/examples/find-missing-image-alt-text-for-accessibility"
+    },
+    {
+      "actorSlug": "my-actor-12",
+      "taskName": "find-category-pages-missing-meta-descriptions",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-12/examples/find-category-pages-missing-meta-descriptions"
+    },
+    {
+      "actorSlug": "my-actor-12",
+      "taskName": "find-missing-meta-descriptions-on-public-pages",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-12/examples/find-missing-meta-descriptions-on-public-pages"
+    },
+    {
+      "actorSlug": "my-actor-17",
+      "taskName": "find-missing-x-twitter-card-tags",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-17/examples/find-missing-x-twitter-card-tags"
+    },
+    {
+      "actorSlug": "my-actor-11",
+      "taskName": "find-onpage-seo-issues-before-launch",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-11/examples/find-onpage-seo-issues-before-launch"
+    },
+    {
+      "actorSlug": "pal-image-alt-text-checker",
+      "taskName": "find-product-images-missing-alt-attributes",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-image-alt-text-checker/examples/find-product-images-missing-alt-attributes"
+    },
+    {
+      "actorSlug": "pal-utm-link-hygiene-check",
+      "taskName": "find-broken-utm-source-medium-links",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-utm-link-hygiene-check/examples/find-broken-utm-source-medium-links"
+    },
+    {
+      "actorSlug": "pal-h1-heading-checker",
+      "taskName": "identify-h1-heading-errors-on-webpages",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-h1-heading-checker/examples/identify-h1-heading-errors-on-webpages"
+    },
+    {
+      "actorSlug": "pal-schema-type-inventory",
+      "taskName": "inventory-product-and-breadcrumb-jsonld-types",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-schema-type-inventory/examples/inventory-product-and-breadcrumb-jsonld-types"
+    },
+    {
+      "actorSlug": "pal-third-party-script-inventory",
+      "taskName": "inventory-third-party-scripts-before-website-migration",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-third-party-script-inventory/examples/inventory-third-party-scripts-before-website-migration"
+    },
+    {
+      "actorSlug": "my-actor-13",
+      "taskName": "verify-canonical-tags-after-site-migration",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-13/examples/verify-canonical-tags-after-site-migration"
+    }
+  ],
+  "usesOnlyPublicTasks": true,
+  "paidRuns": 0,
+  "storeEdits": 0
+}
