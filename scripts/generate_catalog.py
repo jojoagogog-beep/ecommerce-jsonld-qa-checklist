@@ -9,18 +9,22 @@ import html
 import json
 import pathlib
 import re
+import ssl
 import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 BASE="https://api.apify.com/v2/store?username=practical_ai_lab_jp&limit=100"
+# macOS /usr/bin/python3 lacks a usable default CA store on this machine.
+# Keep TLS certificate verification enabled with the system CA bundle.
+CTX=ssl.create_default_context(cafile="/etc/ssl/cert.pem")
 actors=[]
 seen=set()
 offset=0
 for page in range(50):
     url=BASE+"&offset="+str(offset)
-    with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"PAL-Public-Catalog-Generator/1.0"}),timeout=20) as response:
+    with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"PAL-Public-Catalog-Generator/1.0"}),timeout=20,context=CTX) as response:
         data=json.load(response)["data"]
     batch=data.get("items",[])
     for a in batch:
