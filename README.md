@@ -94,6 +94,10 @@ python3 compare_product_snapshots.py examples/price_before.json examples/price_a
 
 The script makes **no web requests** and cannot retrieve real storefront prices. To automatically fetch public Product JSON-LD and compare later runs, see the [PAL Competitor Price & Stock Tracker](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta). Check current Apify pricing first.
 
+## Free H1 heading structure inspector
+
+[Check H1 heading tags locally](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/h1-heading-structure-audit.html) before you choose [PAL H1 Heading Checker on Apify](https://apify.com/practical_ai_lab_jp/pal-h1-heading-checker?utm_source=github&utm_medium=organic&utm_campaign=h1_heading_audit). The free tool does not run an Actor or upload HTML. It flags basic static markup for human review, not guaranteed search rankings.
+
 ## Free, local image-alt accessibility audit
 
 Before running the [PAL Image Alt Text Checker on Apify](https://apify.com/practical_ai_lab_jp/pal-image-alt-text-checker?utm_source=github&utm_medium=organic&utm_campaign=pal_image_accessibility_audit), try the [free browser-only image alt audit](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/image-alt-accessibility-audit.html). It reviews HTML image tags for missing alternative text, potentially decorative empty alt, and generic or filename-like labels without fetching images. It does not certify accessibility or inspect rendered visual meaning. Check the Apify Pricing tab before batch runs.
