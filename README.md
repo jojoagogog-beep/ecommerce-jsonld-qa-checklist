@@ -48,7 +48,7 @@ It **does not crawl websites, validate reciprocal links, or verify indexing**. F
 
 ## Five ready-to-paste schema audit inputs
 
-Prepare the correct public test page and input JSON for [five PAL website quality Actors](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/schema-audit-quickstart.html): FAQPage, BreadcrumbList, JSON-LD syntax, external-link safety and schema type inventory. This page does not execute any Actor. Apify pricing still applies if you choose to run one.
+Prepare tested synthetic pages and ready-to-copy input JSON for [ten PAL website quality Actors](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/schema-audit-quickstart.html): FAQPage, BreadcrumbList, JSON-LD syntax, external-link safety, schema type inventory, mobile viewport, sitemap links, language declarations, duplicate meta and pagination. This page does not execute any Actor. Apify pricing still applies if you choose to run one.
 
 ## Free FAQPage JSON-LD structure checker
 
