@@ -1,7 +1,7 @@
 {
   "publicActorCount": 35,
   "publicExampleTaskCount": 57,
-  "privateTasksExcluded": 4,
+  "privateTasksExcluded": 9,
   "examples": [
     {
       "actorSlug": "my-actor-1",

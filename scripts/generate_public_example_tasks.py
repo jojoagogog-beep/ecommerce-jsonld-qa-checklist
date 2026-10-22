@@ -91,7 +91,7 @@ input{{width:min(100%,640px);border:1px solid #7394a7;background:#13283c;color:#
 <label for="filter">Find a workflow by keyword</label><input id="filter" type="search" placeholder="Try competitor price, Product schema, UTM, H1 or migration…" aria-label="Search published Apify example tasks">
 <p id="result" aria-live="polite">{count} examples</p>
 <div class="grid" id="examples">{''.join(cards)}</div>
-<p>Still not sure which kind of tool fits? <a href="tool-finder.html">Start with the eight-task selector</a> or <a href="competitor-price-readiness.html">check price-page compatibility for free</a>.</p>
+<p>Still not sure which kind of tool fits? <a href="tool-finder.html">Start with the task-based tool selector</a> or <a href="competitor-price-readiness.html">check price-page compatibility for free</a>.</p>
 </main><footer>Practical AI Lab · These examples are not proof of paid customers or guaranteed results. Public task configurations can change; verify current Apify details and pricing.</footer>
 <script>
 const filter=document.getElementById("filter"),cards=[...document.querySelectorAll(".task")];

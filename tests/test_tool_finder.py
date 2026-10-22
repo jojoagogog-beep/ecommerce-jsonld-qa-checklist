@@ -14,10 +14,10 @@ class ToolFinderTests(unittest.TestCase):
  def setUpClass(cls):
   cls.html=(ROOT/'tool-finder.html').read_text()
   cls.parser=Parser();cls.parser.feed(cls.html)
- def test_eight_specific_tasks(self):
-  self.assertEqual(self.parser.cards,8)
-  self.assertEqual(len(self.parser.actors),8)
-  self.assertEqual(len(set(self.parser.actors)),8)
+ def test_eleven_specific_tasks(self):
+  self.assertEqual(self.parser.cards,11)
+  self.assertEqual(len(self.parser.actors),11)
+  self.assertEqual(len(set(self.parser.actors)),11)
  def test_each_task_has_exact_public_store_link(self):
   for slug in self.parser.actors:
    self.assertTrue(any(x.startswith(DOMAIN+slug+'?utm_source=pal_github_pages') for x in self.parser.links),slug)
