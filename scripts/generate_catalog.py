@@ -131,7 +131,7 @@ footer{{background:#0d1727;border-top:1px solid #2c425c;padding:27px 0;color:#c1
 <script type="application/ld+json">{ld_json}</script>
 </head>
 <body>
-<header><div class="container nav"><div class="brand">PRACTICAL AI LAB</div><nav><a href="./">Free guide & workflows</a> · <a href="product-jsonld-preview.html">Free Product schema preview</a> · <a href="https://apify.com/practical_ai_lab_jp">Apify Store ↗</a></nav></div></header>
+<header><div class="container nav"><div class="brand">PRACTICAL AI LAB</div><nav><a href="./">Free guide & workflows</a> · <a href="tool-finder.html">Find the right tool</a> · <a href="product-jsonld-preview.html">Free Product schema preview</a> · <a href="https://apify.com/practical_ai_lab_jp">Apify Store ↗</a></nav></div></header>
 <main>
 <section class="hero"><div class="container">
 <h1>Find a focused tool for your next ecommerce data task.</h1>
