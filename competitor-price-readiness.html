@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Competitor Price Tracker Compatibility Check | Practical AI Lab</title>
+<meta name="description" content="Check whether your pasted product HTML includes supported JSON-LD or Open Graph price metadata before trying PAL Competitor Price Tracker on Apify. Free, local, no account.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-readiness.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Competitor Price Page Compatibility Check">
+<meta property="og:description" content="Test static product markup and price currency for PAL Competitor Price Tracker without a paid run.">
+<meta property="og:url" content="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-readiness.html">
+<style>
+:root{color-scheme:dark;--bg:#0a1524;--panel:#15283a;--txt:#f1f8fc;--muted:#c5d7e3;--accent:#86e5cc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}a{color:#97d8ff}
+nav,main,footer{max-width:980px;margin:auto;padding:20px}nav{display:flex;gap:22px;flex-wrap:wrap}main{padding-top:35px}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.15;max-width:850px;margin:12px 0}h2{font-size:24px}p{color:var(--muted)}
+.eyebrow{font-weight:800;color:var(--accent);font-size:13px;letter-spacing:.11em;text-transform:uppercase}
+section{background:var(--panel);border:1px solid #395269;border-radius:14px;padding:23px;margin:25px 0}
+textarea{width:100%;min-height:215px;border:1px solid #7191a4;border-radius:9px;background:#0b192b;color:var(--txt);padding:14px;font:13px/1.5 ui-monospace,Consolas,monospace;resize:vertical}
+button,.cta{display:inline-block;font:inherit;font-weight:800;color:#073237;background:var(--accent);padding:12px 19px;border:0;border-radius:9px;text-decoration:none;cursor:pointer;margin:10px 12px 6px 0}
+button.secondary{border:1px solid var(--accent);background:transparent;color:var(--txt)}
+label{display:block;margin-bottom:10px;font-weight:750}.status{font-weight:800;color:var(--accent)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;color:#c6ebfa;background:#09182a;border:1px solid #40566c;border-radius:8px;padding:14px}
+small{display:block;color:var(--muted);margin-top:8px}footer{font-size:13px;color:var(--muted)}
+@media(max-width:640px){section{padding:16px}main{padding-top:14px}}
+</style>
+</head>
+<body>
+<nav><a href="./">PAL home</a><a href="competitor-price-tracker.html">How the tracker works</a><a href="catalog.html">All PAL tools</a></nav>
+<main>
+<span class="eyebrow">Practical AI Lab · No-cost browser check</span>
+<h1>Will a competitor product page work with PAL Price Tracker?</h1>
+<p>Before paying for any Apify execution, inspect the <strong>static product HTML</strong> or JSON-LD that you already have permission to access. This browser-only check detects declared Product/Offer JSON-LD or product-typed Open Graph price fields. It never fetches a URL or sends pasted data to any server.</p>
+<section>
+<h2>1. Test a sample or paste your product markup</h2>
+<label for="source">Static HTML or JSON-LD source (maximum 512 KB)</label>
+<textarea id="source" spellcheck="false">&lt;html&gt;&lt;head&gt;
+&lt;meta property="og:type" content="product"&gt;
+&lt;meta property="product:price:amount" content="39.90"&gt;
+&lt;meta property="product:price:currency" content="USD"&gt;
+&lt;meta property="og:title" content="Synthetic Canvas Backpack"&gt;
+&lt;/head&gt;&lt;body&gt;Synthetic sample only&lt;/body&gt;&lt;/html&gt;</textarea>
+<div><button id="check" type="button">Check pasted source</button><button id="reset" type="button" class="secondary">Restore sample</button></div>
+<small>No live scraping. This preview cannot check JavaScript-rendered values, actual checkout prices, real inventory, customer demand or availability of a target URL.</small>
+</section>
+<section aria-labelledby="resultheading">
+<h2 id="resultheading">2. Compatibility result</h2>
+<p id="status" class="status" role="status" aria-live="polite">Run the free check above.</p>
+<pre id="details" aria-live="polite">The sample uses fictional product details.</pre>
+<p>Even if the basic static metadata is present, a paid run may still fail due to access restrictions, redirects, unsupported offer variants, or future website changes. This is a preliminary check, not a guarantee.</p>
+</section>
+<section>
+<h2>3. Want live comparisons and repeat monitoring?</h2>
+<p>PAL's hosted Actor can compare your declared reference price against public product prices on a first run, then report supported price and availability-label changes on later runs. It supports static Product/Offer JSON-LD or explicitly product-typed Open Graph pricing.</p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=free_price_compatibility">See PAL Actor and live Pricing ↗</a>
+<a href="competitor-tracker-input-builder.html">Build one-run input for free ↗</a>
+<p>Read the current Apify Pricing tab before starting an Actor run. Checking this free page never starts a paid run, collects email, creates an account or changes existing Actor prices.</p>
+</section>
+</main>
+<footer>Practical AI Lab · Synthetic preview only · Not a guarantee of Apify quality score, search rank, savings or revenue.</footer>
+<script src="scripts/competitor-price-readiness.js" defer></script>
+</body></html>
