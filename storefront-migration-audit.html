@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ecommerce Storefront Migration QA: Six Public-Page Checks | Practical AI Lab</title>
+<meta name="description" content="A practical ecommerce storefront migration QA sequence: inspect Product JSON-LD, export price and SKU data, check hreflang and H1 structure, review image alt text, and monitor published competitor prices.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/storefront-migration-audit.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Six Public-Page Checks Before an Ecommerce Storefront Migration">
+<meta property="og:description" content="A six-step practical prelaunch and postlaunch QA plan with sample inputs, free checks and optional batch Apify Actors.">
+<meta property="og:url" content="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/storefront-migration-audit.html">
+<style>
+:root{color-scheme:dark;--bg:#0b1828;--ink:#f0f7ff;--soft:#c1d2e1;--line:#34516a;--accent:#8fe5ce}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 25% 0,#153a52 0,var(--bg) 42%);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink)}
+a{color:#9fdbff}a:hover{text-decoration:underline}a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+main,nav,footer{max-width:1050px;margin:auto;padding-left:22px;padding-right:22px}
+header{border-bottom:1px solid var(--line);background:#0c1d2d}
+nav{display:flex;flex-wrap:wrap;gap:19px;align-items:center;padding-top:16px;padding-bottom:16px}
+.brand{margin-right:auto;font-weight:850;letter-spacing:.08em;color:#ecfff9}h1{font-size:clamp(32px,5.5vw,55px);letter-spacing:-.035em;line-height:1.13;max-width:850px;margin:12px 0 20px}
+h2{font-size:clamp(24px,3vw,30px);line-height:1.25;margin-top:0}h3{font-size:19px;line-height:1.35;margin:0}
+p,li{color:var(--soft)}.intro{padding:58px 0 30px}.lead{font-size:19px;max-width:830px}
+.eyebrow{font-size:12px;letter-spacing:.14em;font-weight:850;color:var(--accent);text-transform:uppercase}
+.jumps{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.jumps a{display:inline-block;border:1px solid var(--line);border-radius:100px;padding:7px 14px;text-decoration:none}
+.block{padding:34px 0;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.card{border:1px solid var(--line);border-radius:15px;background:#13293d;padding:23px;display:flex;flex-direction:column}
+.card p{margin:9px 0}.step{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--accent);margin-bottom:8px}
+.limit{border-left:2px solid #8eabba;padding:6px 12px;font-size:14px}
+.cta{display:inline-block;margin-top:auto;padding:11px 15px;border-radius:8px;background:var(--accent);color:#062a33;text-decoration:none;font-weight:800}
+a.cta:hover{text-decoration:underline}pre{overflow:auto;border:1px solid var(--line);background:#081423;padding:15px;border-radius:10px;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:15px 0}td,th{border-bottom:1px solid var(--line);padding:11px 7px;text-align:left;vertical-align:top}
+.aside{border:1px solid var(--line);background:#173147;padding:20px;border-radius:12px}.aside p{margin:0}
+footer{border-top:1px solid var(--line);padding-top:25px;padding-bottom:35px;font-size:13px;color:var(--soft)}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.intro{padding-top:38px}td,th{font-size:14px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Review public ecommerce product pages during a storefront migration","description":"Six checks for static publicly accessible ecommerce pages with optional Apify batch tools.","step":[{"@type":"HowToStep","name":"Record a Product JSON-LD baseline","text":"Before launch, inspect static Product/Offer fields on representative catalog pages."},{"@type":"HowToStep","name":"Export product prices and identifiers","text":"Capture published price, currency, SKU and availability labels from comparable public pages."},{"@type":"HowToStep","name":"Verify hreflang for international pages","text":"Inspect language and region alternates in static HTML and confirm intended mappings manually."},{"@type":"HowToStep","name":"Review H1 heading structure","text":"Check for missing or repeated headings in key templates."},{"@type":"HowToStep","name":"Inspect image alt attributes","text":"Identify missing and empty image alt attributes for manual accessibility review."},{"@type":"HowToStep","name":"Set a postlaunch competitor-price baseline","text":"Use an optional reference price for first-run comparison and reuse a monitor ID in subsequent runs."}]}</script>
+</head>
+<body>
+<header><nav><span class="brand">PRACTICAL AI LAB</span><a href="./">Home</a><a href="tool-finder.html">Choose a tool</a><a href="catalog.html">All public Actors</a><a href="example-tasks.html">Public examples</a></nav></header>
+<main>
+<section class="intro"><span class="eyebrow">Retail operations · Technical SEO · Data QA</span>
+<h1>Six checks to run before and after an ecommerce storefront migration.</h1>
+<p class="lead">A new storefront can look identical while its machine-readable product details change. Use this workflow to separate <strong>catalog metadata quality</strong>, <strong>price extraction</strong>, <strong>international SEO</strong>, <strong>accessibility</strong> and <strong>competitor price monitoring</strong> rather than trying to use one tool for all six jobs.</p>
+<p>Start with free, browser-only checks where possible. The optional Apify Actors linked below handle specific public-data tasks and may charge when you run them. There is no customer account access, actual stock verification, automated SEO ranking improvement, or guaranteed sales uplift.</p>
+<div class="jumps"><a href="#workflow">Six-step workflow ↓</a><a href="#sample">Example input ↓</a><a href="#repeat">QA sign-off ↓</a></div>
+</section>
+<section id="workflow" class="block">
+<h2>Choose the check you need</h2>
+<div class="grid">
+<article class="card"><span class="step">01 · PRODUCT STRUCTURE</span><h3>Check Product and Offer JSON-LD before launch</h3>
+<p>Review representative product templates for declared Product identity, name, SKU, price, currency, published availability and image references. Check the same URLs after theme or platform migration; flag changed or missing fields for investigation.</p>
+<p class="limit">A declared Offer is not proof that the price matches checkout or stock exists in a warehouse.</p>
+<p><a href="product-jsonld-preview.html">Try the free browser-only Product JSON-LD checker</a></p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check?utm_source=pal_migration_guide&amp;utm_medium=organic&amp;utm_campaign=step01_product_schema">Open batch Product Schema Checker ↗</a>
+</article>
+<article class="card"><span class="step">02 · DATA EXPORT</span><h3>Export published product prices, currency and SKU</h3>
+<p>Use the price extractor when the actual job is to capture a structured CSV or JSON snapshot. Reconcile missing identifiers and blank offers in a spreadsheet rather than treating an empty value as an out-of-stock signal.</p>
+<p class="limit">This is a point-in-time data extraction, not recurring historical price monitoring.</p>
+<p><a href="guides/product-jsonld-extractor-vs-price-tracker.md">Compare price extraction with a tracking workflow</a></p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/my-actor?utm_source=pal_migration_guide&amp;utm_medium=organic&amp;utm_campaign=step02_product_extractor">Open Product Price &amp; Stock Extractor ↗</a>
+</article>
+<article class="card"><span class="step">03 · INTERNATIONAL SEO</span><h3>Review hreflang alternate URLs</h3>
+<p>Inspect each language or regional URL's static HTML alternates, checking for duplicate language labels, malformed locale formats, missing URLs and unintentional differences between pre- and postlaunch templates.</p>
+<p class="limit">A local markup check does not validate reciprocal hreflang across the entire site or confirm search indexing.</p>
+<p><a href="hreflang-checker.html">Try the free browser-only hreflang checker</a></p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/my-actor-15?utm_source=pal_migration_guide&amp;utm_medium=organic&amp;utm_campaign=step03_hreflang">Open Hreflang Tag Checker ↗</a>
+</article>
+<article class="card"><span class="step">04 · CONTENT STRUCTURE</span><h3>Check the H1 heading on changed page templates</h3>
+<p>Review product, collection, landing and editorial templates for missing or repeated main headings. Export findings, then validate the most consequential templates manually before sign-off.</p>
+<p class="limit">One H1 does not by itself make a page rank higher; the tool does not inspect rendered client-side frameworks.</p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-h1-heading-checker?utm_source=pal_migration_guide&amp;utm_medium=organic&amp;utm_campaign=step04_h1">Open H1 Heading Checker ↗</a>
+</article>
+<article class="card"><span class="step">05 · ACCESSIBILITY REVIEW</span><h3>Find product images with missing alt attributes</h3>
+<p>Inspect static HTML for images without alt attributes or images with intentionally or unintentionally empty descriptions. Prioritize critical product images for human review rather than replacing every empty alt automatically.</p>
+<p class="limit">Decorative images may appropriately have an empty alt attribute. A field check is not a complete WCAG audit.</p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-image-alt-text-checker?utm_source=pal_migration_guide&amp;utm_medium=organic&amp;utm_campaign=step05_alt_text">Open Image Alt Text Checker ↗</a>
+</article>
+<article class="card"><span class="step">06 · PRICING OPERATIONS</span><h3>Start a repeatable competitor-price monitor after migration</h3>
+<p>Once the new catalog is stable, compare your reference price with a competitor's declared public price on the first run. Reuse the same monitor ID for later checks and review price or availability-label differences.</p>
+<p class="limit">Requires supported static product markup. No checkout confirmation, hidden stock validation or automatic email alerts.</p>
+<p><a href="competitor-price-readiness.html">Test page compatibility locally before paying</a></p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_migration_guide&amp;utm_medium=organic&amp;utm_campaign=step06_price_monitor">Open Competitor Price Tracker ↗</a>
+</article>
+</div>
+</section>
+<section id="sample" class="block"><h2>Start small: a two-page smoke test</h2>
+<p>Start with the same fixed set of public product pages before and after migration. You can copy a simple input shape for an Actor that supports a <code>urls</code> array:</p>
+<pre aria-label="Illustrative Actor input">{
+  "urls": [
+    "https://your-public-store.example/products/product-a",
+    "https://your-public-store.example/products/product-b"
+  ]
+}</pre>
+<p>The URLs above are placeholders, not real endpoints. Replace them with actual public HTTPS product pages you are authorized to inspect. The exact Actor input schema may support additional controls; use the Actor's current Input tab as the source of truth. To avoid a paid run while learning the workflow, try <a href="schema-audit-quickstart.html">ten verified synthetic website QA samples</a>.</p>
+<div class="aside"><p><strong>Cost control:</strong> Reading this guide and using its browser-only checkers does not run an Actor. An Apify execution may incur run-start, successful-event and/or platform usage fees. Read each live Pricing tab, then start with one or two pages only if you accept the charges.</p></div>
+</section>
+<section id="repeat" class="block"><h2>Prelaunch and postlaunch sign-off</h2>
+<table><thead><tr><th>Checkpoint</th><th>Minimum evidence</th><th>When to recheck</th></tr></thead>
+<tbody>
+<tr><td>Product structured data</td><td>Before/after sampled Product and Offer field snapshots</td><td>Template or feed changes</td></tr>
+<tr><td>Price and SKU data</td><td>CSV/JSON export with noted omissions or currency mismatches</td><td>Catalog import, SKU changes</td></tr>
+<tr><td>Hreflang</td><td>Public HTML alternate mappings reviewed against actual locales</td><td>International redirects or URL migration</td></tr>
+<tr><td>H1 and image alt</td><td>Representative template findings signed off by content and accessibility owners</td><td>Theme, design, content changes</td></tr>
+<tr><td>Competitor prices</td><td>Baseline monitor ID and consistent reference currency</td><td>Repeated supported public-price checks</td></tr>
+</tbody></table>
+<p>For more specialized tasks, see <a href="tool-finder.html">the eight-job tool selector</a>, <a href="example-tasks.html">published Apify input examples</a> or <a href="catalog.html">all publicly listed PAL Actors</a>. Avoid running tools on sites or data you are not authorized to inspect.</p>
+</section>
+</main>
+<footer>Practical AI Lab · October 2026 · Independent ecommerce QA workflow. No fabricated rankings, sales claims, guarantees of search placement, or hidden stock verification.</footer>
+</body></html>

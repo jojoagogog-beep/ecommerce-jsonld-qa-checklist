@@ -5,6 +5,8 @@
 > Practical AI Lab builds focused Apify Store tools for public ecommerce catalog quality assurance. Start with the free checklist below; use a hosted PAL tool only if you need batch processing, recurring checks, or exportable reports.
 
 
+[Practical ecommerce storefront migration QA: six checks for Product JSON-LD, price data, hreflang, H1, image alt and monitoring](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/storefront-migration-audit.html). This free guide includes a step-by-step sign-off table and links to optional Apify tools; reading it does not start a paid run.
+
 ## Find the right tool in under one minute
 
 Not every ecommerce data problem needs the same kind of automation. Start with the job, not the name of the tool:
