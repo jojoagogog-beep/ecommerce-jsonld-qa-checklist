@@ -27,6 +27,11 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 19px}
     .action{display:inline-block;text-decoration:none;border:1px solid #6082a3;border-radius:11px;padding:12px 18px;font-weight:700;color:#eefaff}
     .action.primary{background:#70bcd8;border-color:#70bcd8;color:#071321}
+    .more-tools{max-width:930px;margin-top:15px;padding:15px 18px;background:#111d30;border:1px solid #344d67;border-radius:11px}
+    .more-tools summary{cursor:pointer;color:#a8e1e5;font-weight:760}
+    .more-tools summary:focus-visible{outline:3px solid #8bdfdf;outline-offset:4px}
+    .more-tools .actions{margin:14px 0 0}
+
     .small{font-size:.91rem;color:#acbdd3}
     section{padding:58px 0;border-top:1px solid #20344a}
     h2{font-size:1.75rem;line-height:1.25;margin:0 0 16px}
@@ -73,7 +78,15 @@
     <p class="eyebrow">Free tutorial · Ecommerce automation</p>
     <h1>Catch product-data problems before your next catalog launch.</h1>
     <p class="lead">Start with a free offline Product JSON-LD checker. When you need to review dozens of public product URLs, export structured findings or compare published competitor prices over time, use a focused PAL tool on Apify.</p>
-    <div class="actions">
+    <div class="actions" aria-label="Choose the next step">
+      <a class="action primary" href="competitor-price-readiness.html">Check my product pages free →</a>
+      <a class="action" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=focused_homepage" rel="noopener noreferrer">Try competitor price tracking on Apify ↗</a>
+      <a class="action" href="#free">Get the free JSON-LD checklist</a>
+    </div>
+    <p class="small">Price comparison works for supported public static Product JSON-LD / product-typed Open Graph URLs; confirm compatibility first. Paid Apify runs can incur charges. See <a href="competitor-price-tracker.html">current pricing and plan discounts</a>.</p>
+    <details class="more-tools">
+      <summary>More free checks, example tasks and buyer guides</summary>
+      <div class="actions">
       <a class="action primary" href="#free">Get the free checklist</a>
       <a class="action" href="tool-finder.html">Choose the right tool by task ↗</a>
       <a class="action" href="example-tasks.html">Browse public Apify examples ↗</a>
@@ -89,7 +102,8 @@
       <a class="action" href="image-alt-accessibility-audit.html">Free image alt accessibility audit ↗</a>
       <a class="action" href="h1-heading-structure-audit.html">Free H1 heading checker ↗</a>
       <a class="action" href="schema-audit-quickstart.html">Ten ready-to-copy QA example inputs ↗</a>
-    </div>
+      </div>
+    </details>
     <p class="small">No sign-up needed for the free code. Hosted Apify Actors may charge for successful processing or run starts; check each live Pricing tab before running.</p>
   </div>
 </section>

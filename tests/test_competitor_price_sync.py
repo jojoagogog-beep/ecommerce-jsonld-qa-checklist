@@ -25,6 +25,19 @@ class TestPriceSync(unittest.TestCase):
             "USD 0.002625","USD 0.00175"):
    self.assertIn(s,x)
   self.assertNotIn("No plan-specific tier discounts",x)
+ def test_promotion_banner_is_conditional_on_verified_api_pricing(self):
+  standard={"tiered":False,"run":Decimal("0.00005"),"prices":{"FREE":Decimal("0.0035")}}
+  copy=module.build_promo(standard)
+  self.assertNotIn("50% below",copy)
+  self.assertIn("not currently confirmed",copy)
+  discounted={"tiered":True,"run":Decimal("0.00005"),
+              "prices":{k:Decimal(v) for k,v in (("FREE","0.0035"),("BRONZE","0.002625"),
+                        ("SILVER","0.0021"),("GOLD","0.00175"),
+                        ("PLATINUM","0.00175"),("DIAMOND","0.00175"))}}
+  promo=module.build_promo(discounted)
+  for s in ("Bronze 25%","Silver 40%","Gold+ 50%","Run-start fees"):
+   self.assertIn(s,promo)
+  self.assertEqual(promo.count(module.PROMO_BEGIN),1)
  def test_current_site_is_real_price_and_has_only_one_bound_section(self):
   s=(ROOT/"competitor-price-tracker.html").read_text()
   self.assertEqual(s.count(module.BEGIN),1)

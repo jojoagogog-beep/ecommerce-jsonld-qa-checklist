@@ -16,6 +16,8 @@ BASE="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta"
 CTX=ssl.create_default_context(cafile="/etc/ssl/cert.pem")
 BEGIN="<!-- PAL-ACTOR-PRICING:BEGIN -->"
 END="<!-- PAL-ACTOR-PRICING:END -->"
+PROMO_BEGIN="<!-- PAL-VERIFIED-DISCOUNT:BEGIN -->"
+PROMO_END="<!-- PAL-VERIFIED-DISCOUNT:END -->"
 ORDER=["FREE","BRONZE","SILVER","GOLD","PLATINUM","DIAMOND"]
 def get_prices():
     req=urllib.request.Request(API,headers={"User-Agent":"PAL-Live-Price-ReadOnly-Sync/1.0"})
@@ -76,6 +78,20 @@ def build_section(prices):
         '<a href="workflow-time-savings.html">Calculate possible manual time savings and costs</a> '
         'or <a href="pricing-estimator.html">use the Apify event-fee calculator</a>.</p>\n'
         '</div></section>\n'+END)
+def build_promo(prices):
+    if prices["tiered"]:
+        regular=prices["prices"]["FREE"]
+        rate=lambda tier: int((Decimal(100)*(1-prices["prices"][tier]/regular)).quantize(Decimal("1")))
+        message=(f"<strong>Verified eligible-plan product-event discounts:</strong> "
+                 f"Bronze {rate('BRONZE')}%, Silver {rate('SILVER')}%, "
+                 f"Gold+ {rate('GOLD')}% below the current standard rate. "
+                 "Run-start fees and other charges are separate. "
+                 '<a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">Check your live Apify Pricing</a>.')
+    else:
+        message=('Plan-specific discount prices are not currently confirmed in Apify data. '
+                 '<a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">Check live Pricing</a>.')
+    return PROMO_BEGIN+'\n<p class="fineprint verified-offer" id="verified-discount-note">'+message+'</p>\n'+PROMO_END
+
 def main():
     data=get_prices()
     current=FILE.read_text()
@@ -90,6 +106,18 @@ def main():
         next_section=current.find('<section><div class="wrap">',a+len(start))
         if next_section<0:raise RuntimeError("Missing next content section")
         new=current[:a]+replacement+'\n'+current[next_section:]
+    # The hero discount banner is derived only from verified live Apify tiers.
+    promo=build_promo(data)
+    if new.count(PROMO_BEGIN)==1 and new.count(PROMO_END)==1:
+        a=new.index(PROMO_BEGIN)
+        b=new.index(PROMO_END,a)+len(PROMO_END)
+        new=new[:a]+promo+new[b:]
+    elif PROMO_BEGIN not in new and PROMO_END not in new:
+        hero=new.index('<section class="hero">')
+        anchor=new.index('<div class="actions">',hero)
+        new=new[:anchor]+promo+'\n'+new[anchor:]
+    else:
+        raise RuntimeError("Malformed existing discount banner markers")
     if new!=current:FILE.write_text(new)
     print("PAL_LIVE_PRICE_SYNC",json.dumps({"tieredDiscountVerified":data["tiered"],
      "regularPerProductUsd":str(data["prices"]["FREE"]),

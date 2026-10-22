@@ -23,6 +23,7 @@ h2{font-size:clamp(22px,3vw,29px);line-height:1.22;margin:0 0 18px}h3{font-size:
 p{margin:9px 0 16px}.lead{font-size:19px;max-width:790px;color:var(--muted)}.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.13em;font-size:13px;color:var(--mint)}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 14px}.btn{display:inline-block;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:800;background:var(--mint);color:#062631}
 .btn.secondary{background:transparent;color:var(--txt);border:1px solid #829bb0}.fineprint{font-size:13px;color:var(--muted)}
+.verified-offer{padding:15px 17px;border:1px solid #438e8e;border-radius:10px;background:#173549;margin:17px 0 4px}
 main section:not(.hero){padding:33px 0;border-top:1px solid #293d53}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:21px}
 .panel p,.panel li{color:var(--muted)}.number{color:var(--mint);font-weight:800;font-size:12px;letter-spacing:.09em}
@@ -47,6 +48,9 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <span class="eyebrow">For ecommerce operators and pricing analysts</span>
 <h1>Competitor price tracking that starts with a useful comparison.</h1>
 <p class="lead">Compare your own reference price with a competitor's <strong>published product price on the first run</strong>, then monitor price and published availability-label changes on later runs. PAL handles up to <strong>50 public product URLs per run</strong> and exports CSV/JSON datasets.</p>
+<!-- PAL-VERIFIED-DISCOUNT:BEGIN -->
+<p class="fineprint verified-offer" id="verified-discount-note"><strong>Verified eligible-plan product-event discounts:</strong> Bronze 25%, Silver 40%, Gold+ 50% below the current standard rate. Run-start fees and other charges are separate. <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">Check your live Apify Pricing</a>.</p>
+<!-- PAL-VERIFIED-DISCOUNT:END -->
 <div class="actions">
 <a class="btn" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=buyer_intent_competitor_price_tracker" rel="noopener noreferrer">Open competitor price tracker &amp; live Pricing ↗</a>
 <a class="btn secondary" href="competitor-price-readiness.html">Check your product page compatibility free ↗</a>
