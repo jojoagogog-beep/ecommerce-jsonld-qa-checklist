@@ -4,6 +4,22 @@
 
 > Practical AI Lab builds focused Apify Store tools for public ecommerce catalog quality assurance. Start with the free checklist below; use a hosted PAL tool only if you need batch processing, recurring checks, or exportable reports.
 
+
+## Find the right tool in under one minute
+
+Not every ecommerce data problem needs the same kind of automation. Start with the job, not the name of the tool:
+
+| What you need | Where to start |
+| --- | --- |
+| Compare your own reference price with public competitor prices, then recheck changes | [Competitor Price Tracker and live Apify Pricing](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta?utm_source=github&utm_medium=organic&utm_campaign=pal_readme_buyer_jobs) |
+| Audit up to 50 public Product/Offer JSON-LD pages before a product catalog update | [Ecommerce Product Schema Checker and live Apify Pricing](https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check?utm_source=github&utm_medium=organic&utm_campaign=pal_readme_buyer_jobs) |
+| Decide whether you need price monitoring, batch extraction or a structured-data audit | [Free buyer's tool-selection guide](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/tool-finder.html) |
+| Inspect a concrete task with ready-to-review input instead of starting from scratch | [57 published Apify Example tasks](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/example-tasks.html) |
+| Run a small local preview with no paid Actor execution | [Free in-browser Product JSON-LD preview](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/product-jsonld-preview.html) |
+
+**Cost note:** Reading these pages is free. Running an Apify Actor can create event and usage charges; always review its current Pricing tab first. PAL does not verify hidden checkout prices, true warehouse stock or search ranking.
+
+
 ## 1. The launch-day checklist
 
 | Check | What to inspect | Why it matters |
@@ -46,7 +62,7 @@ python3 check_hreflang.py examples/hreflang_sample.html --page-url https://www.e
 
 It **does not crawl websites, validate reciprocal links, or verify indexing**. For an optional cloud batch review of up to 18 *public* URLs, see [PAL Hreflang Tag Checker](https://apify.com/practical_ai_lab_jp/my-actor-15) and consult the live Pricing tab before using it.
 
-## Five ready-to-paste schema audit inputs
+## Ten ready-to-paste website QA inputs
 
 Prepare tested synthetic pages and ready-to-copy input JSON for [ten PAL website quality Actors](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/schema-audit-quickstart.html): FAQPage, BreadcrumbList, JSON-LD syntax, external-link safety, schema type inventory, mobile viewport, sitemap links, language declarations, duplicate meta and pagination. This page does not execute any Actor. Apify pricing still applies if you choose to run one.
 
