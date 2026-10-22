@@ -40,6 +40,19 @@ for page in range(50):
 else:
     raise RuntimeError("Apify Store pagination exceeds 5000 entries; refusing incomplete catalog")
 actors.sort(key=lambda a:(0 if "ECOMMERCE" in (a.get("categories") or []) else 1,(a.get("title") or "").casefold(),a["name"]))
+# Task links were validated via the authenticated public-task exporter.
+# This file contains public URLs only, never an API token or private input.
+MANIFEST=ROOT/"examples-directory-public-manifest.json"
+doc=json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {"usesOnlyPublicTasks":True,"examples":[]}
+if doc.get("usesOnlyPublicTasks") is not True:
+    raise RuntimeError("Task manifest has no public-only verification")
+sample_by_slug={}
+for task in doc["examples"]:
+    slug=task["actorSlug"]
+    url=task["url"]
+    exact="https://apify.com/practical_ai_lab_jp/"+urllib.parse.quote(slug,safe="-")+"/examples/"
+    if not url.startswith(exact):raise RuntimeError("Task URL does not match Actor: "+slug)
+    sample_by_slug.setdefault(slug,url)
 ESC=html.escape
 def val(v):
     return ESC(str(v or ""),quote=True)
@@ -58,10 +71,15 @@ def card(actor):
     categories=actor.get("categories") or []
     badge="Ecommerce" if "ECOMMERCE" in categories else "Developer tools"
     href="https://apify.com/practical_ai_lab_jp/"+urllib.parse.quote(actor["name"],safe="-")
+    href += "?utm_source=pal_github_pages&utm_medium=organic&utm_campaign=pal_actor_catalog"
+    # Example task link is emitted only for verified public examples, never drafts.
+    example=sample_by_slug.get(actor["name"])
+    extra=(f'<a class="example-link" href="{val(example)}">See a published example ↗</a>'
+           if example else '<a class="example-link" href="schema-audit-quickstart.html">Prepare a sample input free ↗</a>')
     searchable=val((raw_title+" "+raw_desc+" "+badge).lower())
     return (f'<article class="card" data-search="{searchable}">'
             f'<span class="tag">{badge}</span><h2>{title}</h2><p>{desc}</p>'
-            f'<a class="card-link" href="{href}">View features & live pricing ↗</a></article>')
+            f'<a class="card-link" href="{val(href)}">View features & live pricing ↗</a>{extra}</article>')
 items="\n".join(card(a) for a in actors)
 # Useful search-intent links, not claims about ratings, popularity or rank.
 workflow_spec=[
@@ -115,7 +133,7 @@ input{{font:inherit;width:min(100%,530px);padding:13px 15px;border:1px solid #5c
 [hidden]{{display:none!important}}
 .card h2{{font-size:1.11rem;line-height:1.32;margin:12px 0}}
 .card p{{color:#bccde0;font-size:.95rem;flex:1}}
-.card-link{{font-weight:700;margin-top:12px}}
+.card-link{{font-weight:700;margin-top:12px}}.example-link{{display:block;margin-top:9px;font-size:.9rem}}
 .workflows{{padding:18px 0 14px}}
 .workflows h2{{font-size:1.4rem;margin:0 0 5px}}
 .workflows p{{color:#bacbdc;margin:0 0 13px}}

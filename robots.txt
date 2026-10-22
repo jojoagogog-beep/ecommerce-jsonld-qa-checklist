@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/sitemap.xml

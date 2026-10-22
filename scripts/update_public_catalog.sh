@@ -14,8 +14,8 @@ if ! /usr/bin/git merge-base --is-ancestor HEAD origin/main; then
   echo "CATALOG_REMOTE_CONFLICT_NEEDS_REVIEW"; exit 1
 fi
 /usr/bin/git merge --ff-only origin/main
-/usr/bin/python3 scripts/generate_catalog.py
 /usr/bin/python3 scripts/generate_public_example_tasks.py
+/usr/bin/python3 scripts/generate_catalog.py
 if /usr/bin/git diff --quiet -- catalog.html example-tasks.html examples-directory-public-manifest.json; then
   echo "CATALOG_UNCHANGED"; exit 0
 fi
