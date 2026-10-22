@@ -52,6 +52,7 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <a class="btn secondary" href="competitor-price-readiness.html">Check your product page compatibility free ↗</a>
 <a class="btn secondary" href="competitor-tracker-input-builder.html">Create ready-to-paste input free ↗</a>
 <a class="btn secondary" href="competitor-price-calculator.html">Try one price comparison free ↗</a>
+<a class="btn secondary" href="workflow-time-savings.html">Estimate manual work hours saved ↗</a>
 <a class="btn secondary" href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/track-product-prices-from-open-graph-tags" rel="noopener noreferrer">See live first-run example · check Pricing ↗</a>
 </div>
 <p class="fineprint">Public static HTML only: Product/Offer JSON-LD or explicitly product-typed Open Graph pricing metadata. No store login, checkout price verification, warehouse stock confirmation or automatic email notifications.</p>
@@ -98,20 +99,19 @@ footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/track-product-prices-from-open-graph-tags">Inspect the published Apify input example · check Pricing before running ↗</a>
 <a href="https://github.com/jojoagogog-beep/ecommerce-jsonld-qa-checklist/blob/main/guides/competitor-price-stock-monitoring.md">Read the complete first-run and repeat-monitoring guide ↗</a>
 </div></section>
+<!-- PAL-ACTOR-PRICING:BEGIN -->
 <section><div class="wrap">
 <h2>What will a run cost?</h2>
-<p>At verification on October 21, 2026, the public Actor listed a <strong>USD 0.009 charge per successfully processed priced product offer</strong> and a <strong>USD 0.00005 run-start event</strong>. The figures below are event-fee illustrations, not live price quotes or guaranteed invoice totals.</p>
-<table>
-<thead><tr><th>Illustrative check</th><th>Pricing-event assumption</th><th>Estimated event fees</th></tr></thead>
-<tbody>
-<tr><td>1 product URL, once</td><td>1 product-check, 1 run start</td><td>USD 0.00905</td></tr>
-<tr><td>5 product URLs, once</td><td>5 product-checks, 1 run start</td><td>USD 0.04505</td></tr>
-<tr><td>50 product URLs, once</td><td>50 product-checks, 1 run start</td><td>USD 0.45005</td></tr>
-</tbody>
-</table>
-<aside><strong>Always check the live <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">Apify Pricing tab</a> before running.</strong> Prices and billing behavior can change. Additional platform usage, failed runs or product metadata variations can change final charges. Repeating runs incurs new costs.</aside>
-<p>Want to calculate another scenario? <a href="pricing-estimator.html">Try the free browser-only Apify event-cost estimator ↗</a></p>
+<p>Published Apify pricing checked during this page's automated catalog sync: <strong>USD 0.0035 per successfully processed priced-product event</strong>, plus <strong>USD 0.00005 per run-start event</strong>. A URL can contain zero, one, or multiple product offers; the calculations below assume exactly one billable product event per URL.</p>
+<table><thead><tr><th>Illustrative check</th><th>Event assumption</th><th>Standard event fees</th></tr></thead><tbody>
+<tr><td>1 product URL, once</td><td>1 priced-product event, 1 run start</td><td>USD 0.00355</td></tr>
+<tr><td>5 product URLs, once</td><td>5 priced-product events, 1 run start</td><td>USD 0.01755</td></tr>
+<tr><td>50 product URLs, once</td><td>50 priced-product events, 1 run start</td><td>USD 0.17505</td></tr></tbody></table>
+<p><strong>No plan-specific tier discounts are confirmed in the current public Actor API response.</strong> Any proposed promotion should not be treated as live until Apify displays it.</p>
+<aside><strong>Always verify <a href="https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta">current Apify Pricing</a> before executing.</strong> Actual event counts, add-on usage, proxy/storage costs and future pricing may differ. The figures are examples, not a binding quote.</aside>
+<p>Want to estimate your workflow? <a href="workflow-time-savings.html">Calculate possible manual time savings and costs</a> or <a href="pricing-estimator.html">use the Apify event-fee calculator</a>.</p>
 </div></section>
+<!-- PAL-ACTOR-PRICING:END -->
 <section><div class="wrap">
 <h2>Before choosing a competitor monitoring tool</h2>
 <div class="grid">
