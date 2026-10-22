@@ -94,6 +94,11 @@ python3 compare_product_snapshots.py examples/price_before.json examples/price_a
 
 The script makes **no web requests** and cannot retrieve real storefront prices. To automatically fetch public Product JSON-LD and compare later runs, see the [PAL Competitor Price & Stock Tracker](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta). Check current Apify pricing first.
 
+## Buyer workflows for competitive ecommerce tasks
+
+- [Ecommerce price tracker: initial reference price vs. recurring competitor checks](ecommerce-price-tracker-workflow.html)
+- [Product JSON-LD extractor: one-time export of price, SKU, currency and public stock labels](product-jsonld-extraction-workflow.html)
+
 ## Explore the complete public Actor catalog
 
 [Browse every currently published Practical AI Lab Actor by keyword](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/catalog.html). This free page links directly to each Actor's live Apify listing and current pricing.
