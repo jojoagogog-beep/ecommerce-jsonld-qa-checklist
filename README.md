@@ -102,6 +102,10 @@ The script makes **no web requests** and cannot retrieve real storefront prices.
 
 Before running the [PAL Image Alt Text Checker on Apify](https://apify.com/practical_ai_lab_jp/pal-image-alt-text-checker?utm_source=github&utm_medium=organic&utm_campaign=pal_image_accessibility_audit), try the [free browser-only image alt audit](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/image-alt-accessibility-audit.html). It reviews HTML image tags for missing alternative text, potentially decorative empty alt, and generic or filename-like labels without fetching images. It does not certify accessibility or inspect rendered visual meaning. Check the Apify Pricing tab before batch runs.
 
+## Choose a competitor price monitoring Actor by actual page compatibility
+
+Read the [buyer-fit guide to competitor price monitoring](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/competitor-price-monitoring-guide.html) before paying. It compares structured public product metadata, JavaScript-rendered product pages, marketplace-specific scrapers and automated alerting needs. PAL explicitly supports the static Product JSON-LD / product-typed Open Graph workflow; it does not promise Amazon page coverage or built-in alerts. Open the [live PAL Apify listing](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta) to check the latest pricing and review examples.
+
 ## Competitor monitoring: estimate hours of manual work avoided
 
 Try the [free editable manual-time-savings estimator](https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/workflow-time-savings.html) to model public product URLs, recurring checks, manual minutes, reviewer time, and estimated event fees. The values are assumptions, **not** real customer results or a promise of profit; always check [current Apify Pricing](https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta) before a run.
