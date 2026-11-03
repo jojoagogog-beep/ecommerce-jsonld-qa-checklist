@@ -1,12 +1,27 @@
 {
-  "publicActorCount": 40,
-  "publicExampleTaskCount": 57,
-  "privateTasksExcluded": 9,
+  "publicActorCount": 85,
+  "publicExampleTaskCount": 100,
+  "privateTasksExcluded": 6,
   "examples": [
+    {
+      "actorSlug": "pal-amazon-brand-price-segments",
+      "taskName": "amazon-brands-price-bands-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-amazon-brand-price-segments/examples/amazon-brands-price-bands-demo"
+    },
+    {
+      "actorSlug": "pal-amazon-discount-data-audit",
+      "taskName": "amazon-discount-claims-quality-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-amazon-discount-data-audit/examples/amazon-discount-claims-quality-demo"
+    },
     {
       "actorSlug": "my-actor-1",
       "taskName": "audit-ecommerce-return-policy-schema-fields",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-1/examples/audit-ecommerce-return-policy-schema-fields"
+    },
+    {
+      "actorSlug": "pal-merchant-organization-audit",
+      "taskName": "ecommerce-organization-jsonld-qa-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-merchant-organization-audit/examples/ecommerce-organization-jsonld-qa-demo"
     },
     {
       "actorSlug": "pal-product-image-schema-audit",
@@ -34,6 +49,16 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check/examples/audit-product-schema-before-catalog-migration"
     },
     {
+      "actorSlug": "my-actor-2",
+      "taskName": "audit-shipping-rate-metadata-before-store-launch",
+      "url": "https://apify.com/practical_ai_lab_jp/my-actor-2/examples/audit-shipping-rate-metadata-before-store-launch"
+    },
+    {
+      "actorSlug": "pal-shopify-store-variant-option-mapper",
+      "taskName": "shopify-variant-sku-option-migration-audit",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-store-variant-option-mapper/examples/shopify-variant-sku-option-migration-audit"
+    },
+    {
       "actorSlug": "my-actor",
       "taskName": "batch-export-product-catalog-prices",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor/examples/batch-export-product-catalog-prices"
@@ -59,9 +84,29 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-product-offer-currency-check/examples/check-product-offer-price-currency-before-launch"
     },
     {
+      "actorSlug": "pal-product-stock-schema-check",
+      "taskName": "check-product-schema-before-seasonal-catalog-update",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-product-stock-schema-check/examples/check-product-schema-before-seasonal-catalog-update"
+    },
+    {
       "actorSlug": "my-actor-2",
       "taskName": "check-product-shipping-price-and-delivery-schema",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-2/examples/check-product-shipping-price-and-delivery-schema"
+    },
+    {
+      "actorSlug": "pal-amazon-product-price-research",
+      "taskName": "amazon-asin-product-offer-price-comparison-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-amazon-product-price-research/examples/amazon-asin-product-offer-price-comparison-demo"
+    },
+    {
+      "actorSlug": "pal-shopify-multi-store-vendor-compare",
+      "taskName": "compare-vendors-across-two-shopify-stores",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-multi-store-vendor-compare/examples/compare-vendors-across-two-shopify-stores"
+    },
+    {
+      "actorSlug": "pal-shopify-assortment-compare",
+      "taskName": "shopify-store-catalog-brand-price-compare-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-assortment-compare/examples/shopify-store-catalog-brand-price-compare-demo"
     },
     {
       "actorSlug": "pal-competitor-price-stock-delta",
@@ -80,8 +125,28 @@
     },
     {
       "actorSlug": "pal-competitor-price-stock-delta",
+      "taskName": "compare-prices-across-retail-product-pages",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/compare-prices-across-retail-product-pages"
+    },
+    {
+      "actorSlug": "pal-shopify-commerce-intelligence-suite",
+      "taskName": "shopify-cross-store-sku-pricing-and-margin-workflow",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-commerce-intelligence-suite/examples/shopify-cross-store-sku-pricing-and-margin-workflow"
+    },
+    {
+      "actorSlug": "pal-competitor-price-stock-delta",
       "taskName": "detect-small-competitor-price-movements",
       "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/detect-small-competitor-price-movements"
+    },
+    {
+      "actorSlug": "pal-shopify-product-collection-export",
+      "taskName": "shopify-collection-variant-export-sample",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-collection-export/examples/shopify-collection-variant-export-sample"
+    },
+    {
+      "actorSlug": "pal-shopify-product-json-csv-export",
+      "taskName": "export-shopify-product-variant-csv-sample",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/export-shopify-product-variant-csv-sample"
     },
     {
       "actorSlug": "my-actor",
@@ -92,6 +157,11 @@
       "actorSlug": "my-actor",
       "taskName": "extract-product-price-and-stock-from-one-url",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor/examples/extract-product-price-and-stock-from-one-url"
+    },
+    {
+      "actorSlug": "pal-shopify-store-product-catalog-qa",
+      "taskName": "find-duplicate-shopify-skus-and-product-image-gaps",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-store-product-catalog-qa/examples/find-duplicate-shopify-skus-and-product-image-gaps"
     },
     {
       "actorSlug": "pal-product-image-schema-audit",
@@ -129,6 +199,11 @@
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-2/examples/find-missing-product-shipping-schema-terms"
     },
     {
+      "actorSlug": "pal-shopify-product-image-inventory",
+      "taskName": "shopify-image-alt-text-quality-audit",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-image-inventory/examples/shopify-image-alt-text-quality-audit"
+    },
+    {
       "actorSlug": "my-actor-3",
       "taskName": "find-missing-product-gtin-sku-mpn-fields",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-3/examples/find-missing-product-gtin-sku-mpn-fields"
@@ -149,6 +224,51 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/monitor-competitor-discounts-over-10-percent"
     },
     {
+      "actorSlug": "pal-shopify-catalog-change-tracker",
+      "taskName": "shopify-variant-price-stock-snapshot-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-catalog-change-tracker/examples/shopify-variant-price-stock-snapshot-demo"
+    },
+    {
+      "actorSlug": "pal-amazon-seller-buybox-change-monitor",
+      "taskName": "preview-amazon-buybox-winner-change",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-amazon-seller-buybox-change-monitor/examples/preview-amazon-buybox-winner-change"
+    },
+    {
+      "actorSlug": "pal-shopify-public-product-search",
+      "taskName": "search-shopify-products-by-sku-vendor-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-public-product-search/examples/search-shopify-products-by-sku-vendor-demo"
+    },
+    {
+      "actorSlug": "pal-shopify-commerce-intelligence-suite",
+      "taskName": "shopify-product-quality-and-price-change-workflow",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-commerce-intelligence-suite/examples/shopify-product-quality-and-price-change-workflow"
+    },
+    {
+      "actorSlug": "pal-shopify-product-json-csv-export",
+      "taskName": "shopify-scraper-product-price-catalog-qa-sample",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/shopify-scraper-product-price-catalog-qa-sample"
+    },
+    {
+      "actorSlug": "pal-shopify-product-json-csv-export",
+      "taskName": "shopify-scraper-variant-sku-barcode-sample",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/shopify-scraper-variant-sku-barcode-sample"
+    },
+    {
+      "actorSlug": "pal-shopify-public-product-changes",
+      "taskName": "shopify-public-product-change-monitor-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-public-product-changes/examples/shopify-public-product-change-monitor-demo"
+    },
+    {
+      "actorSlug": "pal-shopify-variant-stock-feed",
+      "taskName": "shopify-variants-stock-price-change-feed",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-variant-stock-feed/examples/shopify-variants-stock-price-change-feed"
+    },
+    {
+      "actorSlug": "pal-shopify-variant-stock-feed",
+      "taskName": "shopify-5-percent-price-drop-restock-repeat",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-variant-stock-feed/examples/shopify-5-percent-price-drop-restock-repeat"
+    },
+    {
       "actorSlug": "pal-competitor-price-stock-delta",
       "taskName": "detect-product-availability-changes",
       "url": "https://apify.com/practical_ai_lab_jp/pal-competitor-price-stock-delta/examples/detect-product-availability-changes"
@@ -164,9 +284,24 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-aggregate-rating-checker/examples/verify-product-rating-schema-metadata"
     },
     {
+      "actorSlug": "pal-maps-reviews-sentiment-trends",
+      "taskName": "google-maps-review-issues-and-trends-example",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-reviews-sentiment-trends/examples/google-maps-review-issues-and-trends-example"
+    },
+    {
+      "actorSlug": "pal-maps-business-coverage-gaps",
+      "taskName": "local-business-category-coverage-gaps-example",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-business-coverage-gaps/examples/local-business-category-coverage-gaps-example"
+    },
+    {
       "actorSlug": "my-actor-12",
       "taskName": "audit-incomplete-page-meta-description",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-12/examples/audit-incomplete-page-meta-description"
+    },
+    {
+      "actorSlug": "pal-duplicate-meta-detector",
+      "taskName": "website-duplicate-title-canonical-meta-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-duplicate-meta-detector/examples/website-duplicate-title-canonical-meta-demo"
     },
     {
       "actorSlug": "pal-h1-heading-checker",
@@ -184,6 +319,11 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-utm-link-hygiene-check/examples/audit-utm-campaign-links-before-email-launch"
     },
     {
+      "actorSlug": "pal-event-start-date-schema",
+      "taskName": "event-jsonld-date-location-audit-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-event-start-date-schema/examples/event-jsonld-date-location-audit-demo"
+    },
+    {
       "actorSlug": "pal-external-link-security",
       "taskName": "find-unsafe-external-links-opening-new-tabs",
       "url": "https://apify.com/practical_ai_lab_jp/pal-external-link-security/examples/find-unsafe-external-links-opening-new-tabs"
@@ -199,9 +339,24 @@
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-15/examples/check-hreflang-for-multilingual-catalog-launch"
     },
     {
+      "actorSlug": "pal-job-posting-schema-audit",
+      "taskName": "job-posting-jsonld-validity-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-job-posting-schema-audit/examples/job-posting-jsonld-validity-demo"
+    },
+    {
+      "actorSlug": "pal-local-business-schema-audit",
+      "taskName": "local-business-jsonld-address-hours-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-local-business-schema-audit/examples/local-business-jsonld-address-hours-demo"
+    },
+    {
       "actorSlug": "pal-breadcrumb-schema-checker",
       "taskName": "find-missing-breadcrumblist-jsonld",
       "url": "https://apify.com/practical_ai_lab_jp/pal-breadcrumb-schema-checker/examples/find-missing-breadcrumblist-jsonld"
+    },
+    {
+      "actorSlug": "pal-mobile-viewport-checker",
+      "taskName": "website-mobile-viewport-meta-tags-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-mobile-viewport-checker/examples/website-mobile-viewport-meta-tags-demo"
     },
     {
       "actorSlug": "my-actor-14",
@@ -214,14 +369,39 @@
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-16/examples/check-open-graph-social-share-previews"
     },
     {
+      "actorSlug": "pal-pagination-link-checker",
+      "taskName": "website-pagination-next-prev-tags-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-pagination-link-checker/examples/website-pagination-next-prev-tags-demo"
+    },
+    {
+      "actorSlug": "pal-maps-chain-location-consistency",
+      "taskName": "chain-store-listing-hours-address-audit-example",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-chain-location-consistency/examples/chain-store-listing-hours-address-audit-example"
+    },
+    {
       "actorSlug": "my-actor-11",
       "taskName": "run-on-page-seo-checklist-with-fixes",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-11/examples/run-on-page-seo-checklist-with-fixes"
     },
     {
+      "actorSlug": "pal-maps-business-dataset-quality",
+      "taskName": "google-maps-business-listings-csv-cleanup-example",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-business-dataset-quality/examples/google-maps-business-listings-csv-cleanup-example"
+    },
+    {
+      "actorSlug": "pal-maps-reviews-issue-matrix",
+      "taskName": "compare-wait-times-and-cleanliness-by-store-location",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-reviews-issue-matrix/examples/compare-wait-times-and-cleanliness-by-store-location"
+    },
+    {
       "actorSlug": "pal-internal-link-auditor",
       "taskName": "export-internal-navigation-links-for-seo-qa",
       "url": "https://apify.com/practical_ai_lab_jp/pal-internal-link-auditor/examples/export-internal-navigation-links-for-seo-qa"
+    },
+    {
+      "actorSlug": "pal-maps-duplicate-places-audit",
+      "taskName": "places-dataset-duplicate-merge-review-example",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-duplicate-places-audit/examples/places-dataset-duplicate-merge-review-example"
     },
     {
       "actorSlug": "pal-h1-heading-checker",
@@ -249,6 +429,16 @@
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-12/examples/find-missing-meta-descriptions-on-public-pages"
     },
     {
+      "actorSlug": "pal-html-language-checker",
+      "taskName": "website-html-lang-attribute-check-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-html-language-checker/examples/website-html-lang-attribute-check-demo"
+    },
+    {
+      "actorSlug": "pal-privacy-policy-presence",
+      "taskName": "website-privacy-policy-link-availability-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-privacy-policy-presence/examples/website-privacy-policy-link-availability-demo"
+    },
+    {
       "actorSlug": "my-actor-17",
       "taskName": "find-missing-x-twitter-card-tags",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-17/examples/find-missing-x-twitter-card-tags"
@@ -262,6 +452,11 @@
       "actorSlug": "pal-image-alt-text-checker",
       "taskName": "find-product-images-missing-alt-attributes",
       "url": "https://apify.com/practical_ai_lab_jp/pal-image-alt-text-checker/examples/find-product-images-missing-alt-attributes"
+    },
+    {
+      "actorSlug": "pal-sitemap-link-discovery",
+      "taskName": "website-sitemap-reference-check-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-sitemap-link-discovery/examples/website-sitemap-reference-check-demo"
     },
     {
       "actorSlug": "pal-utm-link-hygiene-check",
@@ -279,9 +474,29 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-schema-type-inventory/examples/inventory-product-and-breadcrumb-jsonld-types"
     },
     {
+      "actorSlug": "pal-social-link-inventory",
+      "taskName": "website-official-social-links-inventory-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-social-link-inventory/examples/website-official-social-links-inventory-demo"
+    },
+    {
       "actorSlug": "pal-third-party-script-inventory",
       "taskName": "inventory-third-party-scripts-before-website-migration",
       "url": "https://apify.com/practical_ai_lab_jp/pal-third-party-script-inventory/examples/inventory-third-party-scripts-before-website-migration"
+    },
+    {
+      "actorSlug": "pal-maps-local-category-trends",
+      "taskName": "maps-snapshots-business-category-trends-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-local-category-trends/examples/maps-snapshots-business-category-trends-demo"
+    },
+    {
+      "actorSlug": "pal-maps-reviews-response-prioritizer",
+      "taskName": "maps-review-response-priority-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-maps-reviews-response-prioritizer/examples/maps-review-response-priority-demo"
+    },
+    {
+      "actorSlug": "pal-utm-link-hygiene-check",
+      "taskName": "review-utm-links-before-retail-email-campaign",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-utm-link-hygiene-check/examples/review-utm-links-before-retail-email-campaign"
     },
     {
       "actorSlug": "my-actor-13",
