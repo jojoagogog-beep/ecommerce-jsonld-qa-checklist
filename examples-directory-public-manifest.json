@@ -1,6 +1,6 @@
 {
   "publicActorCount": 100,
-  "publicExampleTaskCount": 100,
+  "publicExampleTaskCount": 98,
   "privateTasksExcluded": 6,
   "examples": [
     {
@@ -94,19 +94,9 @@
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-2/examples/check-product-shipping-price-and-delivery-schema"
     },
     {
-      "actorSlug": "pal-amazon-product-price-research",
-      "taskName": "amazon-asin-product-offer-price-comparison-demo",
-      "url": "https://apify.com/practical_ai_lab_jp/pal-amazon-product-price-research/examples/amazon-asin-product-offer-price-comparison-demo"
-    },
-    {
       "actorSlug": "pal-shopify-multi-store-vendor-compare",
       "taskName": "compare-vendors-across-two-shopify-stores",
       "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-multi-store-vendor-compare/examples/compare-vendors-across-two-shopify-stores"
-    },
-    {
-      "actorSlug": "pal-shopify-assortment-compare",
-      "taskName": "shopify-store-catalog-brand-price-compare-demo",
-      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-assortment-compare/examples/shopify-store-catalog-brand-price-compare-demo"
     },
     {
       "actorSlug": "pal-competitor-price-stock-delta",
