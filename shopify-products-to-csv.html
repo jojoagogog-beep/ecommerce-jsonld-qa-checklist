@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopify Products to CSV: Export SKUs, Barcodes & Variants | PAL</title>
+<meta name="description" content="Export public Shopify products and variants to CSV or JSON: published SKUs, barcodes, prices, availability and product identifiers. Try a two-product example first.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/shopify-products-to-csv.html">
+<meta property="og:type" content="article"><meta property="og:title" content="Shopify Products to CSV: SKU & Variant Export">
+<meta property="og:description" content="A practical, small-sample Shopify CSV exporter guide with a ready-to-copy input and direct link to the live Apify Actor.">
+<meta property="og:url" content="https://jojoagogog-beep.github.io/ecommerce-jsonld-qa-checklist/shopify-products-to-csv.html">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#0a1020;color:#e8edf8}*{box-sizing:border-box}
+body{margin:0;line-height:1.65}a{color:#90d6ff}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:auto;padding:0 24px}header{background:#0d1425;border-bottom:1px solid #2a4057}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding:17px 0}nav strong{margin-right:auto;letter-spacing:.04em}main{padding-bottom:40px}
+h1{font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.12;letter-spacing:-.035em;margin:16px 0}
+h2{font-size:1.65rem;margin:0 0 12px}h3{font-size:1.16rem;margin:0 0 8px}
+.hero{padding:62px 0 45px;background:radial-gradient(circle at 20% 0%,#1b3a55,transparent 70%)}
+.eyebrow{color:#8fd5d5;font-weight:750;letter-spacing:.1em;text-transform:uppercase;font-size:.83rem}
+.lead{font-size:1.13rem;color:#c0d3e7;max-width:730px}
+.cta{display:inline-block;padding:13px 20px;background:#80c7dd;color:#071422!important;text-decoration:none;font-weight:800;border-radius:10px;margin:12px 12px 12px 0}
+.secondary{display:inline-block;border:1px solid #7090ad;padding:12px 19px;border-radius:10px;text-decoration:none;font-weight:700;margin:12px 12px 12px 0}
+.section{border-top:1px solid #284157;padding:42px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:#142238;border:1px solid #314967;border-radius:12px;padding:20px}
+.card p{color:#c1d2e4}.muted{color:#acbfd3}.note{border-left:3px solid #81d0d4;padding:15px 20px;background:#14243a}
+label{display:block;font-weight:700;margin:15px 0 6px}input{width:100%;padding:12px;background:#101d30;color:#fff;border:1px solid #7e9ab2;border-radius:8px;font-size:1rem}
+button{margin:13px 0;padding:12px 18px;background:#80c7dd;border:0;border-radius:8px;font-weight:750;cursor:pointer}
+pre{background:#081421;border:1px solid #34506d;border-radius:8px;overflow:auto;padding:18px;white-space:pre-wrap;word-break:break-word;color:#dbedf8}
+footer{padding:28px 0;border-top:1px solid #30455c;color:#b9cbdd}
+@media(max-width:750px){.grid{grid-template-columns:1fr}.hero{padding:45px 0}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"Export public Shopify products and variants to CSV","description":"Prepare a bounded authorized public Shopify storefront URL and run the PAL product CSV exporter on Apify.","step":[{"@type":"HowToStep","name":"Choose a permitted public Shopify store","text":"Enter a public HTTPS store URL you are authorized to analyze."},{"@type":"HowToStep","name":"Start with two products","text":"Paste the sample JSON into the Actor's Input tab and check its live Pricing tab before running."},{"@type":"HowToStep","name":"Download CSV or JSON","text":"Inspect the run dataset and download variants.csv or products.csv from its key-value store."}]}
+</script>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Navigation"><strong>PRACTICAL AI LAB</strong><a href="./">Home</a><a href="catalog.html">All tools</a><a href="pricing-estimator.html">Cost estimator</a><a href="https://apify.com/practical_ai_lab_jp">Apify Store</a></nav></header>
+<main>
+<section class="hero"><div class="wrap">
+<div class="eyebrow">Shopify public catalog export · CSV / JSON</div>
+<h1>Export Shopify products, variants, SKUs and barcodes to CSV.</h1>
+<p class="lead">For catalog migration, merchandising QA and feed reconciliation: get published product and variant records without a merchant login. Start with just two products and inspect the output before scaling.</p>
+<a class="cta" href="https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export?utm_source=pal_github_pages&amp;utm_medium=organic&amp;utm_campaign=shopify_csv_buyer_guide">Open Shopify CSV Exporter on Apify</a>
+<a class="secondary" href="#sample">Build a small first-run input</a>
+<p class="muted">Supported public, robots-permitted Shopify feeds only. A run can incur Apify charges. See the live Pricing tab before starting.</p>
+</div></section>
+<section class="section"><div class="wrap">
+<h2>Choose a real business use case</h2><div class="grid">
+<div class="card"><h3>Catalog migration</h3><p>Export a bounded list of published products and variants with stable product/variant identifiers and visible SKU data.</p></div>
+<div class="card"><h3>Barcode completeness</h3><p>Review published barcode fields and empty values. Blank fields are not filled or inferred.</p></div>
+<div class="card"><h3>Merchandising QA</h3><p>Review listed prices, public availability flags and a per-store catalog insights summary. Export spreadsheet-safe CSV.</p></div>
+</div>
+</div></section>
+<section class="section" id="sample"><div class="wrap">
+<h2>A two-product setup — no code required</h2>
+<p>Choose a Shopify storefront that permits access to its public product feed. This local helper generates only the JSON input; it never scans the URL or contacts the store.</p>
+<label for="store">Permitted public Shopify storefront URL</label>
+<input id="store" type="url" inputmode="url" placeholder="https://your-permitted-store.example" autocomplete="off">
+<button type="button" id="generate">Generate sample input</button>
+<p id="feedback" class="muted" role="status">Your input stays in this browser.</p>
+<pre id="json">{"storeUrls":["https://YOUR-PERMITTED-SHOPIFY-STORE"],"exportMode":"variants","maxProductsPerStore":2,"maxPagesPerStore":1,"pageSize":2,"requestDelayMs":1000}</pre>
+<button type="button" id="copy">Copy input JSON</button>
+<p>Paste it into the Actor's <strong>Input</strong> tab, check the <strong>Pricing</strong> tab, then run. After completion, open the Dataset for JSON or the run's Key-value store for <code>variants.csv</code>, <code>products.csv</code> (depending on output mode) and <code>SUMMARY</code>.</p>
+<p><a href="https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/shopify-scraper-variant-sku-barcode-sample">Review the bounded example configuration on Apify</a> (running it may be billable).</p>
+</div></section>
+<section class="section"><div class="wrap">
+<h2>Which PAL tool should you use?</h2>
+<div class="grid">
+<div class="card"><h3>One-time CSV export</h3><p>Need product and variant rows? Start with the <a href="https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export">Shopify Product CSV Exporter</a>.</p></div>
+<div class="card"><h3>Search a product feed</h3><p>Need SKU, vendor or title filtering? Review the <a href="https://apify.com/practical_ai_lab_jp/pal-shopify-public-product-search">public-product search Actor</a>.</p></div>
+<div class="card"><h3>Repeat catalog comparisons</h3><p>Need differences between snapshots? Review the <a href="https://apify.com/practical_ai_lab_jp/pal-shopify-catalog-change-tracker">catalog-change tracker</a>.</p></div>
+</div>
+<h2 style="margin-top:34px">Limits and billing, stated clearly</h2>
+<p class="note">No private Shopify inventory, orders, customer data, unpublished products or verified stock counts. Public feeds may be blocked or incomplete, and prices may vary by storefront/market without a currency guarantee. Check the Actor's live price, run-start charge and per-event terms before running. No sales or performance result is guaranteed.</p>
+<p>Need help? Use the product's Apify <strong>Issues</strong> tab for product-specific questions. <a href="catalog.html">Browse all published PAL tools</a>.</p>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Practical AI Lab · <a href="./">Home</a> · <a href="https://apify.com/practical_ai_lab_jp">Official Apify listings</a></div></footer>
+<script>
+(function(){
+const store=document.getElementById('store'), result=document.getElementById('json'), feedback=document.getElementById('feedback');
+document.getElementById('generate').addEventListener('click',function(){
+try{
+const u=new URL(store.value.trim());
+if(u.protocol!=='https:'||!u.hostname.includes('.')||u.username||u.password||u.port) throw new Error('Please enter a public HTTPS store URL without credentials or a custom port.');
+const data={storeUrls:[u.origin],exportMode:'variants',maxProductsPerStore:2,maxPagesPerStore:1,pageSize:2,requestDelayMs:1000};
+result.textContent=JSON.stringify(data,null,2);
+feedback.textContent='Sample input generated. Check the destination site permissions and Apify live pricing before running.';
+}catch(e){feedback.textContent=e.message;}
+});
+document.getElementById('copy').addEventListener('click',async function(){
+try{await navigator.clipboard.writeText(result.textContent);feedback.textContent='JSON input copied.';}
+catch(e){feedback.textContent='Select the JSON input and copy it manually.';}
+});
+})();
+</script>
+</body></html>
