@@ -229,6 +229,11 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-public-product-search/examples/search-shopify-products-by-sku-vendor-demo"
     },
     {
+      "actorSlug": "pal-shopify-product-json-csv-export",
+      "taskName": "shopify-scraper-variant-sku-barcode-sample",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/shopify-scraper-variant-sku-barcode-sample"
+    },
+    {
       "actorSlug": "pal-shopify-commerce-intelligence-suite",
       "taskName": "shopify-product-quality-and-price-change-workflow",
       "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-commerce-intelligence-suite/examples/shopify-product-quality-and-price-change-workflow"
@@ -237,11 +242,6 @@
       "actorSlug": "pal-shopify-product-json-csv-export",
       "taskName": "shopify-scraper-product-price-catalog-qa-sample",
       "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/shopify-scraper-product-price-catalog-qa-sample"
-    },
-    {
-      "actorSlug": "pal-shopify-product-json-csv-export",
-      "taskName": "shopify-scraper-variant-sku-barcode-sample",
-      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/shopify-scraper-variant-sku-barcode-sample"
     },
     {
       "actorSlug": "pal-shopify-public-product-changes",
