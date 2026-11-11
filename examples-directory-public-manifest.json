@@ -1,7 +1,7 @@
 {
   "publicActorCount": 100,
-  "publicExampleTaskCount": 98,
-  "privateTasksExcluded": 6,
+  "publicExampleTaskCount": 99,
+  "privateTasksExcluded": 7,
   "examples": [
     {
       "actorSlug": "pal-amazon-brand-price-segments",
@@ -92,6 +92,11 @@
       "actorSlug": "my-actor-2",
       "taskName": "check-product-shipping-price-and-delivery-schema",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor-2/examples/check-product-shipping-price-and-delivery-schema"
+    },
+    {
+      "actorSlug": "pal-amazon-product-price-research",
+      "taskName": "amazon-asin-product-offer-price-comparison-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-amazon-product-price-research/examples/amazon-asin-product-offer-price-comparison-demo"
     },
     {
       "actorSlug": "pal-shopify-multi-store-vendor-compare",
