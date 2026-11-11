@@ -1,6 +1,6 @@
 {
   "publicActorCount": 100,
-  "publicExampleTaskCount": 99,
+  "publicExampleTaskCount": 100,
   "privateTasksExcluded": 7,
   "examples": [
     {
@@ -102,6 +102,11 @@
       "actorSlug": "pal-shopify-multi-store-vendor-compare",
       "taskName": "compare-vendors-across-two-shopify-stores",
       "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-multi-store-vendor-compare/examples/compare-vendors-across-two-shopify-stores"
+    },
+    {
+      "actorSlug": "pal-shopify-assortment-compare",
+      "taskName": "shopify-store-catalog-brand-price-compare-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-assortment-compare/examples/shopify-store-catalog-brand-price-compare-demo"
     },
     {
       "actorSlug": "pal-competitor-price-stock-delta",
