@@ -144,11 +144,6 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-collection-export/examples/shopify-collection-variant-export-sample"
     },
     {
-      "actorSlug": "pal-shopify-product-json-csv-export",
-      "taskName": "export-shopify-product-variant-csv-sample",
-      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/export-shopify-product-variant-csv-sample"
-    },
-    {
       "actorSlug": "my-actor",
       "taskName": "extract-product-prices-sku-stock-to-csv",
       "url": "https://apify.com/practical_ai_lab_jp/my-actor/examples/extract-product-prices-sku-stock-to-csv"
@@ -257,6 +252,11 @@
       "actorSlug": "pal-shopify-public-product-changes",
       "taskName": "shopify-public-product-change-monitor-demo",
       "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-public-product-changes/examples/shopify-public-product-change-monitor-demo"
+    },
+    {
+      "actorSlug": "pal-shopify-product-json-csv-export",
+      "taskName": "export-shopify-product-variant-csv-sample",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-shopify-product-json-csv-export/examples/export-shopify-product-variant-csv-sample"
     },
     {
       "actorSlug": "pal-shopify-variant-stock-feed",
