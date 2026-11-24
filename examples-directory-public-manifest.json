@@ -184,6 +184,11 @@
       "url": "https://apify.com/practical_ai_lab_jp/pal-product-offer-currency-check/examples/find-missing-offer-price-currency-fields"
     },
     {
+      "actorSlug": "pal-privacy-policy-presence",
+      "taskName": "website-privacy-policy-link-availability-demo",
+      "url": "https://apify.com/practical_ai_lab_jp/pal-privacy-policy-presence/examples/website-privacy-policy-link-availability-demo"
+    },
+    {
       "actorSlug": "pal-review-schema-auditor",
       "taskName": "find-missing-ecommerce-product-review-schema",
       "url": "https://apify.com/practical_ai_lab_jp/pal-review-schema-auditor/examples/find-missing-ecommerce-product-review-schema"
@@ -432,11 +437,6 @@
       "actorSlug": "pal-html-language-checker",
       "taskName": "website-html-lang-attribute-check-demo",
       "url": "https://apify.com/practical_ai_lab_jp/pal-html-language-checker/examples/website-html-lang-attribute-check-demo"
-    },
-    {
-      "actorSlug": "pal-privacy-policy-presence",
-      "taskName": "website-privacy-policy-link-availability-demo",
-      "url": "https://apify.com/practical_ai_lab_jp/pal-privacy-policy-presence/examples/website-privacy-policy-link-availability-demo"
     },
     {
       "actorSlug": "my-actor-17",
